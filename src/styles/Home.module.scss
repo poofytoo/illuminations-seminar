@@ -32,6 +32,10 @@
 .circleContainer {
 }
 
+.paragraph {
+  color: var(--white);
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

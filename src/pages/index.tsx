@@ -1,9 +1,40 @@
 import type { NextPage } from 'next';
+import { google } from 'googleapis';
 import Link from 'next/link';
 
 import styles from '../styles/Home.module.scss';
+import GoogleParser from '../components/GoogleParser';
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const documentId = '1S2gIcxddk0iilI6K54nibhUT5H8SeIaD9JIrEwQJiSs';
+  const client = new google.auth.JWT({
+    email: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
+    scopes: ['https://www.googleapis.com/auth/documents'],
+    key: process.env.NEXT_PUBLIC_PRIVATE_KEY,
+  });
+
+  console.log(process.env.PRIVATE_KEY);
+
+  await client.authorize();
+
+  const gsapi = google.docs({ version: 'v1', auth: client });
+  const opt = {
+    documentId,
+  };
+
+  const data = await gsapi.documents.get(opt);
+  return {
+    props: {
+      data: data.data,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 5 seconds
+    revalidate: 5, // In seconds
+  };
+}
+
+const Home: NextPage = ({ data }: any) => {
   return (
     <>
       <div className={styles.centerContainer}>
@@ -44,7 +75,7 @@ const Home: NextPage = () => {
               <a href="mailto:vhung@mit.edu">vhung@mit.edu</a>
             </p>
             <h2>Office Hours</h2>
-            <p>Office Hours will be posted here!</p>
+            <GoogleParser rawData={data} />
             <h2 className="blue">Lecture Notes</h2>
             <ul>
               <Link href="/slides/slides1.pdf">

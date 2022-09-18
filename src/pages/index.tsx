@@ -22,8 +22,8 @@ const Home: NextPage = () => {
               </a>
             </p>
             <p>
-              Hello! The Fall 2022 MIT Illuminations Seminar, first-year, 3-unit
-              seminar designed to introduce students to the basics of
+              Hello! The Fall 2022 MIT Illuminations Seminar is a first-year,
+              3-unit seminar designed to introduce students to the basics of
               electronics and lighting through hands-on experimentation and
               integration with the context of a dynamic light installation at
               the MIT Welcome Center called{' '}

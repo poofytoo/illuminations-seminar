@@ -1,0 +1,42 @@
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 30px;
+}
+
+.textContent {
+  max-width: 480px;
+  padding: 0 10px;
+}
+
+.circle {
+  background-color: gray;
+  max-width: 400px;
+  max-height: 400px;
+  width: calc(100vw - 40px);
+  height: calc(100vw - 40px);
+  border-radius: 200px;
+  display: inline-block;
+  background-image: url('/images/illuminations-banner.png');
+  background-size: cover;
+  animation: rotate 6s ease-in-out alternate;
+}
+
+.circleContainer {
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

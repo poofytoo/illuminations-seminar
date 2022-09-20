@@ -13,14 +13,15 @@ void setup() {
 }
 
 void loop() { 
-  FastLED.clear();
-  FastLED.show();
-  delay(2000);
-  
 	for(int i = 0; i < NUM_LEDS; i++) {
 		leds[i] = CRGB(255, 255, 255);
 		// Show the leds
 		FastLED.show(); 
 		delay(100);
 	}
+ 
+  delay(2000);
+ 
+  FastLED.clear();
+  FastLED.show();
 }

@@ -77,13 +77,30 @@ const Home: NextPage = ({ data }: any) => {
             <h2>Office Hours</h2>
             <GoogleParser rawData={data} />
             <h2 className="blue">Lecture Notes</h2>
-            <ul>
-              <Link href="/slides/slides1.pdf">
-                <li>Hello and Welcome!</li>
-              </Link>
-              <Link href="/slides/slides2.pdf">
-                <li>Electronics 101</li>
-              </Link>
+            <ul className="slides-list">
+              <li>
+                Hello and Welcome!
+                <Link href="/slides/slides1.pdf">
+                  <div className="resource-button">Slides</div>
+                </Link>
+              </li>
+              <li>
+                Electronics 101
+                <Link href="/slides/slides2.pdf">
+                  <div className="resource-button">Slides</div>
+                </Link>
+              </li>
+              <li>
+                <div>LED Arrays & WS2812B</div>
+                <div>
+                  <Link href="/handouts/handout3.pdf">
+                    <div className="resource-button">Handout</div>
+                  </Link>
+                  <Link href="/slides/slides3.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

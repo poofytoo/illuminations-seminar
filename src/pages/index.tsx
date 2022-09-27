@@ -68,13 +68,12 @@ const Home: NextPage = ({ data }: any) => {
               to the MIT Welcome Center!
             </p>
             <p>
-              <span className={'dem'}>Course Instructor:</span> Chris Peterson{' '}
+              <span className={'dem'}>Lead Advisor:</span> Chris Peterson{' '}
               <a href="mailto:petey@mit.edu">petey@mit.edu</a>
               <br />
-              <span className={'dem'}>Lecturer:</span> Victor Hung{' '}
+              <span className={'dem'}>Lead Instructor:</span> Victor Hung{' '}
               <a href="mailto:vhung@mit.edu">vhung@mit.edu</a>
             </p>
-            <h2>Office Hours</h2>
             <GoogleParser rawData={data} />
             <h2 className="blue">Lecture Notes</h2>
             <ul className="slides-list">
@@ -92,7 +91,7 @@ const Home: NextPage = ({ data }: any) => {
               </li>
               <li>
                 <div>LED Arrays & WS2812B</div>
-                <div>
+                <div className="no-wrap">
                   <Link href="/handouts/handout3.pdf">
                     <div className="resource-button">Handout</div>
                   </Link>

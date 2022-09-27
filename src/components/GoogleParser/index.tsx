@@ -168,7 +168,7 @@ const GoogleParser = ({ rawData }: any) => {
     }
   }
 
-  return <div className={styles.googleParser}>{elementList}</div>;
+  return <>{elementList}</>;
 };
 
 export default GoogleParser;

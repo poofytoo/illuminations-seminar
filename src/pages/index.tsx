@@ -100,6 +100,17 @@ const Home: NextPage = ({ data }: any) => {
                   </Link>
                 </div>
               </li>
+              <li>
+                <div>Arduino Communication</div>
+                <div className="no-wrap">
+                  <Link href="https://docs.google.com/document/d/1fKwelZp6m6lmYmVyhJrSoUUHCThntiso6fvIo4sDTn8/edit?usp=sharing">
+                    <div className="resource-button">Handout</div>
+                  </Link>
+                  <Link href="/slides/slides4.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

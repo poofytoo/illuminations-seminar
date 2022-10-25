@@ -13,8 +13,6 @@ export async function getStaticProps() {
     key: process.env.NEXT_PUBLIC_PRIVATE_KEY,
   });
 
-  console.log(process.env.PRIVATE_KEY);
-
   await client.authorize();
 
   const gsapi = google.docs({ version: 'v1', auth: client });
@@ -107,6 +105,28 @@ const Home: NextPage = ({ data }: any) => {
                     <div className="resource-button">Handout</div>
                   </Link>
                   <Link href="/slides/slides4.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div>This Time with Feeling</div>
+                <div className="no-wrap">
+                  <Link href="https://docs.google.com/document/d/1F-bwqSela4taOxqhqnhU6WC122cONZ2tgXrz2-z0w3g">
+                    <div className="resource-button">Final Project</div>
+                  </Link>
+                  <Link href="/slides/slides5.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div>Final Project & SOSO</div>
+                <div className="no-wrap">
+                  <Link href="https://illuminations.mit.edu/">
+                    <div className="resource-button">Download Software</div>
+                  </Link>
+                  <Link href="/slides/slides6.pdf">
                     <div className="resource-button">Slides</div>
                   </Link>
                 </div>

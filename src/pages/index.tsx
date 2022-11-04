@@ -131,6 +131,28 @@ const Home: NextPage = ({ data }: any) => {
                   </Link>
                 </div>
               </li>
+              <li>
+                <div>Emotional Design & SOSO</div>
+                <div className="no-wrap">
+                  <Link href="/slides/slides7.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                  <Link href="/slides/soso1.pdf">
+                    <div className="resource-button">SOSO Slides</div>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div>Principles of Light & Diffusers</div>
+                <div className="no-wrap">
+                  <Link href="/slides/slides8.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                  <Link href="/slides/soso2.pdf">
+                    <div className="resource-button">SOSO Slides</div>
+                  </Link>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

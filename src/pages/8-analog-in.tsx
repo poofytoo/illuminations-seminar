@@ -1,7 +1,4 @@
-import Image from 'next/image';
-
 import styles from '../styles/Guide.module.scss';
-import cx from 'classnames';
 import GuideImage from '../components/GuideImage';
 
 const Page = ({ data }: any) => {
@@ -117,18 +114,24 @@ const Page = ({ data }: any) => {
       <p>
         Plug these new light and dark values in, and then print{' '}
         <code>value</code>. If you've done it correctly, you should now see
-        value as a number between 0 and 1.
+        value as a number between 0 and 1 based on the min and max brightness!
       </p>
       <h2>Make a Simple Light Meter!</h2>
       <p>
         Let's visualize the brightness with our LED strip! You{' '}
         <strong>do not need to cut your LED strip down for this demo!</strong>{' '}
         (we just happened to have a shorter LED strand. Try to reproduce this
-        behavior: the more brighter the environment is, the more LEDs are on.
-        When it's completely dark, there LED strip follows suite and lights 0
-        LEDs on.
+        behavior: the brighter the environment is, the more LEDs are on. When
+        it's completely dark, the LED strip follows suit and has 0 LEDs on.
       </p>
       <GuideImage src="/images/guide/photoresistor-tryit.gif" size="LARGE" />
+      {/* Solution code is hidden PhotoResistorWithLEDs */}
+      <div className={styles.navigation}>
+        <a />
+        <a href="/9-potentiometer" className={styles.next}>
+          Onwards to Potentiometers!
+        </a>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@
   line-height: 24px;
   max-width: 800px;
   margin: 50px auto;
+  padding: 20px;
 
   p {
     font-weight: 300;
@@ -29,7 +30,55 @@
     font-family: monospace;
   }
 
-  .equation {
-    white-space: nowrap;
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    gap: 10px;
+  }
+
+  .navigation a {
+    transition: 0.2s all;
+  }
+
+  .next,
+  .previous {
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    border: 2px solid var(--highlight);
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s all;
+
+    &:hover {
+      border-color: var(--white);
+    }
+  }
+
+  .navigation .next:after {
+    content: '';
+    margin-left: 5px;
+    transform: rotate(-45deg);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 3px solid white;
+    border-width: 0 3px 3px 0;
+  }
+
+  .navigation .previous:before {
+    content: '';
+    margin-right: 5px;
+    transform: rotate(-225deg);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 3px solid white;
+    border-width: 0 3px 3px 0;
   }
 }

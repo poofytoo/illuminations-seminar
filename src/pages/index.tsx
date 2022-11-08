@@ -129,6 +129,9 @@ const Home: NextPage = ({ data }: any) => {
                   <Link href="/slides/slides6.pdf">
                     <div className="resource-button">Slides</div>
                   </Link>
+                  <Link href="/slides/soso1.pdf">
+                    <div className="resource-button">SOSO Slides</div>
+                  </Link>
                 </div>
               </li>
               <li>
@@ -137,7 +140,7 @@ const Home: NextPage = ({ data }: any) => {
                   <Link href="/slides/slides7.pdf">
                     <div className="resource-button">Slides</div>
                   </Link>
-                  <Link href="/slides/soso1.pdf">
+                  <Link href="/slides/soso2.pdf">
                     <div className="resource-button">SOSO Slides</div>
                   </Link>
                 </div>
@@ -147,9 +150,6 @@ const Home: NextPage = ({ data }: any) => {
                 <div className="no-wrap">
                   <Link href="/slides/slides8.pdf">
                     <div className="resource-button">Slides</div>
-                  </Link>
-                  <Link href="/slides/soso2.pdf">
-                    <div className="resource-button">SOSO Slides</div>
                   </Link>
                 </div>
               </li>

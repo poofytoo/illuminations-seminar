@@ -15,6 +15,8 @@ body {
   --white: #eeeeee;
   --link-blue: rgb(124, 218, 255);
 
+  --highlight: #16fffb;
+
   background-color: var(--black);
   color: var(--white);
   line-height: 1.5em;
@@ -100,6 +102,7 @@ ul li {
     align-items: center;
   }
 }
+
 .no-wrap {
   white-space: nowrap;
 }

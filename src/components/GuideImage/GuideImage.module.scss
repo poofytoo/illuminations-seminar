@@ -1,0 +1,46 @@
+.imageContainer {
+  text-align: center;
+  margin: 50px 0;
+
+  img {
+    max-width: 500px;
+    border-radius: 10px;
+    border: 2px solid var(--white);
+  }
+
+  img.full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  img.large {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  img.medium {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  img.small {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a .caption {
+    display: block;
+    opacity: 0.6;
+    margin-top: 5px;
+    font-size: 16px;
+    color: var(--white);
+  }
+}

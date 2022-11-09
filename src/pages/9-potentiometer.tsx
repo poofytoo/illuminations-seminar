@@ -7,7 +7,7 @@ const Page = ({ data }: any) => {
       <h1>The Potentiometer</h1>
       <h2>Pots!</h2>
       <p>
-        A Potentiometer (affectionately known as a pot) is a three-terminal
+        A potentiometer (affectionately known as a pot) is a three-terminal
         resistor with a sliding or rotating contact that forms a voltage
         divider.
       </p>

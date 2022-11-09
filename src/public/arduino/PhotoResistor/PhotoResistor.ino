@@ -2,8 +2,8 @@
 
 int sensorValue = 0;
 
-float dark = 350;
-float light = 1000;
+float dark = 630;
+float light = 1024;
 float value = 0;
 
 void setup() {

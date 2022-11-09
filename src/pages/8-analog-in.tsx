@@ -5,7 +5,12 @@ const Page = ({ data }: any) => {
   return (
     <div className={styles.guideContent}>
       <h1>The Photoresistor</h1>
-      <h2>Introduction!</h2>
+      <h2>Introduction</h2>
+      <p>
+        Having the LED strip change based on the environment is a great way to
+        add interactivity to your project - an example of this is light sensing
+        (responding to different light levels).
+      </p>
       <p>
         The photoresistor (or photocell) is a special type of resistor that
         changes in resistance when light shines on it. When there is{' '}
@@ -82,7 +87,9 @@ const Page = ({ data }: any) => {
           Arduino website here
         </a>
         . <code>analogRead(A0)</code> will give us a value range of between 0
-        and 1024. We'll use a 10k&#8486; resistor as the bottom resistor, and
+        and 1024. Up until now, we've been dealing with digital inputs (just
+        HIGH or LOW) - with this function, we can have much higher fidelity
+        sensing. We'll use a 10k&#8486; resistor as the bottom resistor, and
         while the values of the photoresistor may not be exact, they're
         relatively easy to calibrate.
       </p>

@@ -23,7 +23,7 @@
     }
 
     .chapterId {
-      color: var(--highlight);
+      color: #555;
       font-weight: 500;
       margin-bottom: 5px;
       width: 26px;
@@ -39,9 +39,17 @@
       border: 2px solid #222;
       transition: 0.1s;
 
-      &:hover {
-        cursor: pointer;
+      &.active {
         border-color: var(--highlight);
+
+        .chapterId {
+          color: var(--highlight);
+        }
+      }
+
+      &:hover:not(.active) {
+        cursor: pointer;
+        border-color: var(--white);
       }
     }
   }

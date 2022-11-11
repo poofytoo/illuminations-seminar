@@ -1,4 +1,13 @@
 .sidebar {
+  h3 {
+    font-size: 13px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #888;
+  }
+
   ul {
     font-family: 'DM Sans', sans-serif;
     width: 280px;
@@ -33,14 +42,31 @@
     li {
       border: none;
       border-radius: 8px;
-      padding: 8px 15px 3px;
+      padding: 0 5px 0 15px;
       background-color: #222;
-      margin-bottom: 10px;
+      height: 30px;
+      margin-bottom: 7px;
       border: 2px solid #222;
       transition: 0.1s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .text {
+        line-height: normal;
+        padding-top: 3px;
+      }
+
+      .type {
+        opacity: 0.5;
+      }
 
       &.active {
         border-color: var(--highlight);
+
+        .type {
+          opacity: 1;
+        }
 
         .chapterId {
           color: var(--highlight);
@@ -48,9 +74,38 @@
       }
 
       &:hover:not(.active) {
+        .type {
+          opacity: 1;
+        }
         cursor: pointer;
         border-color: var(--white);
       }
     }
+  }
+
+  .type {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .arduino {
+    background-color: #00949c;
+    background-image: url('/images/arduino.svg');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+
+  .app {
+    // a gradient from blue to purple
+    background: linear-gradient(45deg, #9101ff 20%, #00c8ff 100%);
   }
 }

@@ -1,13 +1,13 @@
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
 
-import styles from '../styles/Guide.module.scss';
+import styles from '../../styles/Guide.module.scss';
 
 const Page = ({ data }: any) => {
   return (
     <div className={styles.appWrapper}>
       <Sidebar />
       <div className={styles.guideContent}>
-        <h1>Buttons & Inputs</h1>
+        <h1>Intro to Illuminations!</h1>
         <h2>Coming Soon!</h2>
       </div>
     </div>

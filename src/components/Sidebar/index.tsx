@@ -5,30 +5,67 @@ import styles from './Sidebar.module.scss';
 import cx from 'classnames';
 
 export const navigationLinks = [
+  { heading: 'Introduction' },
   {
-    id: 6,
+    title: 'Hello!',
+    href: '/hello',
+  },
+  {
+    title: 'Intro to Illuminations!',
+    href: '/intro-to-illuminations',
+  },
+  {
+    title: 'Intro to Arduino!',
+    href: '/intro-to-arduino',
+    type: ['arduino'],
+  },
+  {
+    title: 'Blinking an LED',
+    href: '/blink',
+    type: ['arduino'],
+  },
+  {
     title: 'WS2812B LEDs',
-    href: '/6-ws2812b',
+    href: '/ws2812b',
+    type: ['arduino'],
+  },
+  { heading: 'The Illuminations App' },
+  {
+    title: 'App + Your Arduino',
+    href: '/intro-to-app',
+    type: ['app', 'arduino'],
   },
   {
-    id: 7,
+    title: 'Slit Scan Photography',
+    href: '/slit-scan',
+    type: ['app'],
+  },
+  { title: 'p5.js', href: '/p5-js', type: ['app'] },
+  {
+    title: 'Best Practices',
+    href: '/best-practices',
+    type: ['app'],
+  },
+  { heading: 'Making it Dynamic' },
+  {
     title: 'Inputs & Buttons',
-    href: '/7-inputs',
+    href: '/inputs',
+    type: ['arduino'],
   },
   {
-    id: 8,
     title: 'Analog In',
-    href: '/8-analog-in',
+    href: '/analog-in',
+    type: ['arduino'],
   },
   {
-    id: 9,
     title: 'Potentiometers',
-    href: '/9-potentiometer',
+    href: '/potentiometer',
+    type: ['arduino'],
   },
   {
-    id: 10,
     title: 'MBTA API',
-    href: '/10-mbta-api',
+    href: '/mbta-api',
+    type: ['app'],
   },
 ];
 
@@ -42,21 +79,38 @@ const Sidebar = () => {
     }
   }, []);
 
+  let id = 0;
   return (
     <div className={styles.sidebar}>
       <ul>
-        {navigationLinks.map((link, key) => (
-          <Link key={key} href={link.href}>
-            <li
-              className={cx({
-                [styles.active]: activePage === link.href,
-              })}
-            >
-              <span className={styles.chapterId}>{link.id}</span>
-              {link.title}
-            </li>
-          </Link>
-        ))}
+        {navigationLinks.map((link, key) => {
+          if (link.heading) {
+            return <h3>{link.heading}</h3>;
+          }
+          if (link.href) {
+            id += 1;
+            return (
+              <Link key={key} href={`/chapter${link.href}`}>
+                <li
+                  className={cx({
+                    [styles.active]: activePage === `/chapter${link.href}`,
+                  })}
+                >
+                  <span className={styles.text}>
+                    <span className={styles.chapterId}>{id}</span>
+                    {link.title}
+                  </span>
+                  <span className={styles.icons}>
+                    {link.type &&
+                      link.type.map((type) => (
+                        <span className={cx(styles[type], styles.type)}></span>
+                      ))}
+                  </span>
+                </li>
+              </Link>
+            );
+          }
+        })}
       </ul>
     </div>
   );

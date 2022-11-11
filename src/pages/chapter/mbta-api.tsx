@@ -6,9 +6,9 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism-twilight.min.css';
 
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
 
-import styles from '../styles/Guide.module.scss';
+import styles from '../../styles/Guide.module.scss';
 
 const Page = ({ data }: any) => {
   const [code, setCode] = useState(`// MIT Illuminations Seminar 2022

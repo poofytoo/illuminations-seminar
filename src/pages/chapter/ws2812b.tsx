@@ -1,6 +1,6 @@
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
 
-import styles from '../styles/Guide.module.scss';
+import styles from '../../styles/Guide.module.scss';
 
 const Page = ({ data }: any) => {
   return (

@@ -1,6 +1,6 @@
-import styles from '../styles/Guide.module.scss';
-import GuideImage from '../components/GuideImage';
-import Sidebar from '../components/Sidebar';
+import styles from '../../styles/Guide.module.scss';
+import GuideImage from '../../components/GuideImage';
+import Sidebar from '../../components/Sidebar';
 
 const Page = ({ data }: any) => {
   return (

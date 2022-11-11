@@ -15,6 +15,10 @@ export const navigationLinks = [
     href: '/intro-to-illuminations',
   },
   {
+    title: 'Basics of Electronics',
+    href: '/electronics',
+  },
+  {
     title: 'Intro to Arduino!',
     href: '/intro-to-arduino',
     type: ['arduino'],

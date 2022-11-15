@@ -26,6 +26,12 @@
     color: var(--highlight);
   }
 
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
   .center {
     text-align: center;
   }
@@ -98,5 +104,33 @@
     &:focus {
       outline: 2px solid var(--highlight) !important;
     }
+  }
+
+  .special {
+    background-color: var(--highlight);
+    border-radius: 4px;
+    padding: 0 5px;
+    color: var(--black);
+    margin: 2px 5px;
+  }
+}
+
+.legend {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--white);
+  opacity: 1;
+  max-width: 600px;
+  margin: 0 auto 50px;
+
+  .largeIcons {
+    width: 45px;
+    height: 45px;
+    opacity: 1;
+    background-color: #0098a0;
+    margin-right: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    margin-top: 3px;
   }
 }

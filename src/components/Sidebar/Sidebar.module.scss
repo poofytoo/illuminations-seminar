@@ -83,29 +83,29 @@
     }
   }
 
-  .type {
-    width: 22px;
-    height: 22px;
-    border-radius: 3px;
-    display: inline-block;
-    margin-left: 4px;
-  }
-
   .icons {
     display: flex;
     align-items: center;
   }
+}
 
-  .arduino {
-    background-color: #00949c;
-    background-image: url('/images/arduino.svg');
-    background-position: center;
-    background-size: 80%;
-    background-repeat: no-repeat;
-  }
+.type {
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: 4px;
+}
 
-  .app {
-    // a gradient from blue to purple
-    background: linear-gradient(45deg, #9101ff 20%, #00c8ff 100%);
-  }
+.arduino {
+  background-color: #00949c;
+  background-image: url('/images/arduino.svg');
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.app {
+  // a gradient from blue to purple
+  background: linear-gradient(45deg, #9101ff 20%, #00c8ff 100%);
 }

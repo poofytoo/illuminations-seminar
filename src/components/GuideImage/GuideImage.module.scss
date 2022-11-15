@@ -1,6 +1,10 @@
 .imageContainer {
   text-align: center;
-  margin: 50px 0;
+  margin: 40px 0;
+
+  table td {
+    font-size: 24px;
+  }
 
   img {
     max-width: 500px;
@@ -42,5 +46,22 @@
     margin-top: 5px;
     font-size: 16px;
     color: var(--white);
+  }
+}
+
+.allImages {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0;
+
+  .imageContainer {
+    flex: 1 1 100px;
+    margin: 0;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

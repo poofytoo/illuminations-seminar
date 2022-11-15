@@ -11,10 +11,6 @@ export const navigationLinks = [
     href: '/hello',
   },
   {
-    title: 'Intro to Illuminations!',
-    href: '/intro-to-illuminations',
-  },
-  {
     title: 'Basics of Electronics',
     href: '/electronics',
   },

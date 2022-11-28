@@ -90,6 +90,8 @@ const Page = ({ data }: any) => {
               <td valign="top">
                 <strong>Arduino</strong> • If you see this icon, this means the
                 chapter will contain information on working with an Arduino.
+                Information on the next page will give you a sense of how to
+                procure some of these materials.
               </td>
             </tr>
             <tr>
@@ -113,6 +115,7 @@ const Page = ({ data }: any) => {
           a couple of resources we recommend:
         </p>
         <ul>
+          <li>AdaFruit</li>
           <li>Instructables</li>
         </ul>
         <p>

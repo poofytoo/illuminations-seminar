@@ -35,6 +35,14 @@ export async function getStaticProps() {
 const Home: NextPage = ({ data }: any) => {
   return (
     <>
+      <div className={styles.buttonContainer}>
+        <Link href="/chapter/hello">
+          <div className={styles.button}>
+            Check out the Illuminations Learning Resource Here! <br />
+            (Work in Progress)
+          </div>
+        </Link>
+      </div>
       <div className={styles.centerContainer}>
         <div className={styles.contentContainer}>
           <div className={styles.circleContainer}>
@@ -122,7 +130,7 @@ const Home: NextPage = ({ data }: any) => {
               </li>
               <li>
                 <div>Final Project & SOSO</div>
-                <div className="no-wrap">
+                <div className="no-wrap actually-wrap">
                   <Link href="https://illuminations.mit.edu/">
                     <div className="resource-button">Download Software</div>
                   </Link>
@@ -149,6 +157,22 @@ const Home: NextPage = ({ data }: any) => {
                 <div>Principles of Light & Diffusers</div>
                 <div className="no-wrap">
                   <Link href="/slides/slides8.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div>Inputs & Making it Dynamic</div>
+                <div className="no-wrap">
+                  <Link href="/slides/slides9.pdf">
+                    <div className="resource-button">Slides</div>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div>GitHub & Law Clinic</div>
+                <div className="no-wrap">
+                  <Link href="/slides/slides10.pdf">
                     <div className="resource-button">Slides</div>
                   </Link>
                 </div>

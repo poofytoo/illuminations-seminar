@@ -1,6 +1,7 @@
 import styles from '../../styles/Guide.module.scss';
 import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
 
 const Page = ({ data }: any) => {
   return (
@@ -141,12 +142,7 @@ const Page = ({ data }: any) => {
         </p>
         <GuideImage src="/images/guide/photoresistor-tryit.gif" size="LARGE" />
         {/* Solution code is hidden PhotoResistorWithLEDs */}
-        <div className={styles.navigation}>
-          <a />
-          <a href="/9-potentiometer" className={styles.next}>
-            Onwards to Potentiometers!
-          </a>
-        </div>
+        <PageNavigationButtons />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import styles from '../../styles/Guide.module.scss';
 import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
 
 const Page = ({ data }: any) => {
   return (
@@ -69,8 +70,8 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           If you need a refresher on the code, try taking the code from the{' '}
-          <a href="/8-analog-in">previous section</a> and modifying it to work
-          with the pot.
+          <a href="/chapter/potentiometer">previous section</a> and modifying it
+          to work with the pot.
         </p>
         <h2>And now some Lights!</h2>
         <p>
@@ -85,12 +86,7 @@ const Page = ({ data }: any) => {
           potentiometer!
         </p>
         <GuideImage src="/images/guide/pot-speed.gif" size="LARGE" />
-        <div className={styles.navigation}>
-          <a href="/8-analog-in" className={styles.previous}>
-            Back to Photoresistors!
-          </a>
-          <a />
-        </div>
+        <PageNavigationButtons />
       </div>
     </div>
   );

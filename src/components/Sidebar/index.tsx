@@ -32,9 +32,9 @@ export const navigationLinks = [
   },
   { heading: 'The Illuminations App' },
   {
-    title: 'App + Your Arduino',
+    title: 'Illuminations App',
     href: '/intro-to-app',
-    type: ['app', 'arduino'],
+    type: ['app'],
   },
   {
     title: 'Slit Scan Photography',

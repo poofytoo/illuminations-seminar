@@ -9,6 +9,7 @@ import 'prismjs/themes/prism-twilight.min.css';
 import Sidebar from '../../components/Sidebar';
 
 import styles from '../../styles/Guide.module.scss';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
 
 const Page = ({ data }: any) => {
   const [code, setCode] = useState(`// MIT Illuminations Seminar 2022
@@ -106,6 +107,7 @@ function draw() {
             fontSize: 14,
           }}
         />
+        <PageNavigationButtons />
       </div>
     </div>
   );

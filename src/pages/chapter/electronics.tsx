@@ -11,7 +11,7 @@ const Page = ({ data }: any) => {
         <h2>An Introductory Spark</h2>
         <p>
           To get a sense of how the lights in Illuminations work, let's start
-          with something
+          from the very beginning.
         </p>
       </div>
     </div>

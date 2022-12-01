@@ -37,7 +37,7 @@ const GuideImage = ({
   return (
     <div className={styles.allImages}>
       {src.map((image, key) => (
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainer} key={key}>
           <a href={image} target="_blank">
             <img src={image} alt={`${alt} ${key + 1}`} />
           </a>

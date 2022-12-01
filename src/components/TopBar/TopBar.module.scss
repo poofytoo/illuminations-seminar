@@ -1,0 +1,14 @@
+.topBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 10px;
+  background-color: var(--highlight);
+  z-index: 10;
+  background: linear-gradient(
+    to right,
+    var(--illuminations-blue),
+    var(--illuminations-purple)
+  );
+}

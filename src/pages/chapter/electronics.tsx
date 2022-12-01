@@ -7,8 +7,12 @@ const Page = ({ data }: any) => {
     <div className={styles.appWrapper}>
       <Sidebar />
       <div className={styles.guideContent}>
-        <h1>Electronics</h1>
-        <h2>Coming Soon!</h2>
+        <h1>Basics of Electronics</h1>
+        <h2>An Introductory Spark</h2>
+        <p>
+          To get a sense of how the lights in Illuminations work, let's start
+          with something
+        </p>
       </div>
     </div>
   );

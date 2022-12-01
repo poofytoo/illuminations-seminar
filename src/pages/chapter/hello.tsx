@@ -64,7 +64,7 @@ const Page = ({ data }: any) => {
         <h2>How to use this Learning Guide</h2>
         <p>
           This learning guide is designed for a wide audience - from beginners
-          with no experience to people who have some experience with
+          with no experience to individuals who have some experience with
           electronics. We'll go over a whole lot of content and touch on a bunch
           of names and terminologies. Nonetheless, the goal is always just to
           give you an introduction and touch upon specific things, which will

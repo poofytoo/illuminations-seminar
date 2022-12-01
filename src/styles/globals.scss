@@ -7,6 +7,7 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   line-height: 1.5em;
   font-weight: 400;
+  width: 100%;
 }
 
 body {
@@ -21,6 +22,9 @@ body {
   color: var(--white);
   line-height: 1.5em;
   font-size: 18px;
+
+  --illuminations-blue: #00c8ff;
+  --illuminations-purple: #9101ff;
 }
 
 h1 {

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import styles from './Sidebar.module.scss';
 import cx from 'classnames';
+import TopBar from '../TopBar';
 
 export const navigationLinks = [
   { heading: 'Introduction' },
@@ -69,8 +70,9 @@ export const navigationLinks = [
   },
 ];
 
-const Sidebar = () => {
+const SidebarContent = () => {
   const [activePage, setActivePage] = useState('');
+  let id = 0;
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -79,13 +81,12 @@ const Sidebar = () => {
     }
   }, []);
 
-  let id = 0;
   return (
-    <div className={styles.sidebar}>
+    <div className={styles.sidebarContent}>
       <ul>
         {navigationLinks.map((link, key) => {
           if (link.heading) {
-            return <h3>{link.heading}</h3>;
+            return <h3 key={key}>{link.heading}</h3>;
           }
           if (link.href) {
             id += 1;
@@ -102,8 +103,11 @@ const Sidebar = () => {
                   </span>
                   <span className={styles.icons}>
                     {link.type &&
-                      link.type.map((type) => (
-                        <span className={cx(styles[type], styles.type)}></span>
+                      link.type.map((type, key2) => (
+                        <span
+                          className={cx(styles[type], styles.type)}
+                          key={key2}
+                        ></span>
                       ))}
                   </span>
                 </li>
@@ -112,6 +116,31 @@ const Sidebar = () => {
           }
         })}
       </ul>
+    </div>
+  );
+};
+
+const Sidebar = () => {
+  return (
+    <div className={styles.sidebar}>
+      <TopBar />
+      <div className={styles.sidebarMobile}>
+        <label className={styles.menuButtonHitArea}>
+          <input
+            className={cx('forceStartupHide', styles.menuButton)}
+            type="checkbox"
+          />
+          <div className={cx(styles.hotdog, styles.hotdogTop)} />
+          <div className={cx(styles.hotdog, styles.hotdogMiddle)} />
+          <div className={cx(styles.hotdog, styles.hotdogBottom)} />
+          <div className={styles.sidebarMobileContentContainer}>
+            <SidebarContent />
+          </div>
+        </label>
+      </div>
+      <div className={styles.sidebarDesktop}>
+        <SidebarContent />
+      </div>
     </div>
   );
 };

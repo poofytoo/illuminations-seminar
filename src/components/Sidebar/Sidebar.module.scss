@@ -1,4 +1,4 @@
-.sidebar {
+.sidebarContent {
   h3 {
     font-size: 13px;
     margin-top: 20px;
@@ -106,6 +106,118 @@
 }
 
 .app {
-  // a gradient from blue to purple
-  background: linear-gradient(45deg, #9101ff 20%, #00c8ff 100%);
+  background: linear-gradient(
+    45deg,
+    var(--illuminations-purple) 20%,
+    var(--illuminations-blue) 100%
+  );
+}
+
+.sidebarMobile {
+  position: fixed;
+  background-color: #1d1d1d;
+  left: 0;
+  width: 100vw;
+  top: 0;
+  height: 66px;
+  z-index: 7;
+}
+
+.sidebarMobileContentContainer {
+  left: -100vw;
+  width: calc(100vw - 60px);
+  top: 0;
+  bottom: 0;
+  padding: 70px 30px 30px;
+  background-color: var(--black);
+  transition: 0.3s all;
+  position: fixed;
+  z-index: 1;
+
+  ul {
+    width: 100%;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.hotdog {
+  position: absolute;
+  z-index: 31;
+  display: block;
+  width: 22px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 1.5px;
+  transition: 0.2s all;
+}
+
+.hotdogTop {
+  top: 20px;
+  left: 19px;
+}
+
+.hotdogMiddle {
+  top: 27px;
+  left: 19px;
+}
+
+.hotdogBottom {
+  top: 34px;
+  left: 19px;
+}
+
+.menuButtonHitArea {
+  position: fixed;
+  z-index: 999;
+  top: 11px;
+  left: 8px;
+  width: 60px;
+  height: 60px;
+  margin-top: 0;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.menuButton {
+  display: block;
+  visibility: hidden;
+}
+
+.menuButton:checked {
+  ~ .hotdogTop {
+    transform: rotate(45deg) translate(3px, 4px);
+  }
+
+  ~ .hotdogMiddle {
+    opacity: 0%;
+    transform: translateX(-10px);
+  }
+
+  ~ .hotdogBottom {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+}
+
+.menuButton:checked ~ .mobileNavbarContainer {
+  top: 0;
+  left: 0;
+}
+
+.menuButton:checked ~ .sidebarMobileContentContainer {
+  left: 0;
+}
+
+@media (max-width: 800px) {
+  .sidebarDesktop {
+    display: none;
+  }
 }

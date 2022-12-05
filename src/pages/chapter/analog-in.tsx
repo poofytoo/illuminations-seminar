@@ -61,7 +61,7 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           If you're not familiar with voltage dividers, take a moment to think
-          about why that is. You can always work it out using Ohm's law:{' '}
+          about why that is. You can work it out using Ohm's law:{' '}
           <span className={styles.equation}>V = IR</span>. As an example, let's
           look at a voltage divider using a photo resistor with some values.
         </p>
@@ -141,7 +141,12 @@ const Page = ({ data }: any) => {
           it's completely dark, the LED strip follows suit and has 0 LEDs on.
         </p>
         <GuideImage src="/images/guide/photoresistor-tryit.gif" size="LARGE" />
-        {/* Solution code is hidden PhotoResistorWithLEDs */}
+        <p>
+          Try to see if you can reproduce this effect!
+          <br />
+          Stuck? You can also download the code{' '}
+          <a href="/arduino/PhotoResistor/PhotoResistor.ino">here</a>.
+        </p>
         <PageNavigationButtons />
       </div>
     </div>

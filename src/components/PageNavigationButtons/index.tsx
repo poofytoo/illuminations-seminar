@@ -33,7 +33,7 @@ const PageNavigationButtons = () => {
 
   return (
     <div className={styles.navigation}>
-      {previousPage ? (
+      {searchId > 0 && previousPage ? (
         <a href={`/chapter/${previousPage.href}`} className={styles.previous}>
           {previousPage.title}
         </a>

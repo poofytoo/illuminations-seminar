@@ -82,7 +82,13 @@ function draw() {
     <div className={styles.appWrapper}>
       <Sidebar />
       <div className={styles.guideContent}>
-        <h1>MBTA API</h1>
+        <h1>APIs</h1>
+        <h2>What is an API?</h2>
+        <p>
+          An API is short for Application Programming Interface. This isn't
+          particularly illuminating - you can think about it like this: an API
+          is a way for two different programs to communicate with each other.
+        </p>
         <h2>Working with APIs</h2>
         <p>
           Below is example of how to use the MBTA API. We recommend using the{' '}

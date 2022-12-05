@@ -1,5 +1,7 @@
 import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
+import Link from 'next/link';
 
 import styles from '../../styles/Guide.module.scss';
 import sidebar from '../../components/Sidebar/Sidebar.module.scss';
@@ -61,6 +63,13 @@ const Page = ({ data }: any) => {
           don't know what any of this means - don't worry! We'll explain it in
           the next section.
         </p>
+        <p>
+          If you're not interested in learning all the nitty gritty details of
+          electronics, feel free to{' '}
+          <Link href="/chapter/intro-to-app">
+            Jump straight to the Illuminations App!
+          </Link>
+        </p>
         <h2>How to use this Learning Guide</h2>
         <p>
           This learning guide is designed for a wide audience - from beginners
@@ -115,8 +124,16 @@ const Page = ({ data }: any) => {
           a couple of resources we recommend:
         </p>
         <ul>
-          <li>AdaFruit</li>
-          <li>Instructables</li>
+          <li>
+            <a href="https://www.adafruit.com/">AdaFruit</a> an open-source
+            hardware company based in New York City that sells great, reliable,
+            beginner-electronic friendly parts as well as a provider of great
+            tutorials and guides.
+          </li>
+          <li>
+            <a href="https://www.instructables.com/">Instructables</a> a website
+            specializing in user-created and uploaded do-it-yourself projects
+          </li>
         </ul>
         <p>
           This guide itself is also open source and{' '}
@@ -130,6 +147,7 @@ const Page = ({ data }: any) => {
           want to contribute, feel free to submit a pull request! We're excited
           to help the community build more awesome blinky lights.
         </p>
+        <PageNavigationButtons />
       </div>
     </div>
   );

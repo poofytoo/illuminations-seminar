@@ -51,6 +51,7 @@ const Page = ({ data }: any) => {
             https://github.com/sosolimited/MIT-Illuminations/releases
           </a>
         </p>
+        <p></p>
       </div>
     </div>
   );

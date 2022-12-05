@@ -45,6 +45,44 @@
     }
   }
 
+  .tableContainer {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  table.dataTable {
+    border-collapse: collapse;
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 24px;
+
+    th {
+      text-align: left;
+      padding: 3px 15px 3px 2px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--white);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 3px 15px 3px 2px;
+      font-size: 15px;
+      border-bottom: 1px solid var(--smudgy-gray);
+    }
+  }
+
+  .author {
+    color: var(--smudgy-gray);
+    opacity: 0.8;
+    font-size: 16px;
+
+    a {
+      color: var(--smudgy-gray);
+    }
+  }
+
   .center {
     text-align: center;
   }

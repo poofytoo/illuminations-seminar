@@ -8,6 +8,9 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>Introduction to the Illuminations App</h1>
+        <div className={styles.author}>
+          By <a href="http://instagram.com/poofytoo">Victor Hung</a>
+        </div>
         <h2>Desktop App</h2>
         <p>
           The software that runs the Illumination lights is an{' '}

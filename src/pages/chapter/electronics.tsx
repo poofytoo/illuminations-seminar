@@ -10,6 +10,9 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>Basics of Electronics</h1>
+        <div className={styles.author}>
+          By <a href="http://instagram.com/poofytoo">Victor Hung</a>
+        </div>
         <div className={styles.learningGoals}>
           <h3>Goals of This Chapter</h3>
           <ul>

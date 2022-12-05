@@ -118,6 +118,21 @@ const Page = ({ data }: any) => {
             </tr>
           </tbody>
         </table>
+        <p>
+          If you're interested in the Arduino portions (which we highly
+          recommend, as it'll go over how to get your own blinky lights at
+          home!) the third chapter will go over a list of recommended components
+          to obtain. You can{' '}
+          <Link href="/chapter/intro-to-arduino#components">
+            jump ahead to that list here
+          </Link>
+          .
+        </p>
+        <h2>
+          How does this guide differ from the millions of other guides out
+          there?
+        </h2>
+        <p>We're glad you asked!</p>
         <h2>Additional Information</h2>
         <p>
           Want to dive deeper into any of the materials in this guide? There are

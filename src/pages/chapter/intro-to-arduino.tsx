@@ -94,7 +94,7 @@ const Page = ({ data }: any) => {
           size="SMALL"
           caption="An example of an Arduino in action - wired up to a few buttons and LEDs"
         />
-        <h2>Following Along</h2>
+        <h2 id="components">Following Along</h2>
         <p>
           At this point in the learning guide, there are a couple of components
           we recommend you obtain if you'd like to follow along.

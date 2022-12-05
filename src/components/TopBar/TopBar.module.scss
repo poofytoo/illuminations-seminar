@@ -12,3 +12,43 @@
     var(--illuminations-purple)
   );
 }
+
+.topBar2 {
+  position: fixed;
+  right: 0;
+  width: 100vw;
+  top: 10px;
+  background-color: #222;
+  z-index: 8;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.home {
+  padding: 10px 20px;
+  font-size: 16px;
+  display: inline-block;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: #333;
+  }
+}
+
+@media (max-width: 800px) {
+  .topBar2 {
+    text-align: right;
+    background: transparent;
+    width: 50vw;
+
+    .home {
+      padding: 14.5px 20px;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

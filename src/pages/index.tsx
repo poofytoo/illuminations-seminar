@@ -43,6 +43,11 @@ const Home: NextPage = ({ data }: any) => {
           </div>
         </Link>
       </div>
+      <div className={styles.buttonContainer}>
+        <Link href="https://www.dropbox.com/request/zvW4TiF1oiqb3mv9z9ND">
+          <div className={styles.button}>Write-up Submission</div>
+        </Link>
+      </div>
       <div className={styles.centerContainer}>
         <div className={styles.contentContainer}>
           <div className={styles.circleContainer}>

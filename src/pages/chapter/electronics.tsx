@@ -59,7 +59,7 @@ const Page = ({ data }: any) => {
           the entirety of it must be intact, otherwise it won't work properly.
         </p>
         <p>
-          Note that the direction show in the image above is 'conventional
+          Note that the direction shown in the image above is 'conventional
           current', which assumes that power flows from the positive to
           negative. The reverse is called "electron current", which actually
           describes the flow of electrons (a more realistic model.){' '}

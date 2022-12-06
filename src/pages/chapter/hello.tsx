@@ -15,9 +15,12 @@ const Page = ({ data }: any) => {
         <h1>Hello!</h1>
         <h2>Welcome!</h2>
         <p>
-          This is the learning guide for MIT Illuminations. MIT Illuminations is
-          an ongoing experiment in creative computation at the MIT Welcome
-          Center located in{' '}
+          This is the learning guide for{' '}
+          <a href="https://illuminations.mit.edu" target="_blank">
+            MIT Illuminations
+          </a>
+          . MIT Illuminations is an ongoing experiment in creative computation
+          at the MIT Welcome Center located in{' '}
           <a
             href="https://www.google.com/maps/place/MIT+Welcome+Center/@42.3621496,-71.0858094,15z/data=!4m2!3m1!1s0x0:0x5655bc63bb8beefe?sa=X&ved=2ahUKEwjHyJqm7rD7AhU-FFkFHQ_3BWMQ_BJ6BAh0EAg"
             target="_BLANK"
@@ -129,10 +132,19 @@ const Page = ({ data }: any) => {
           .
         </p>
         <h2>
-          How does this guide differ from the millions of other guides out
+          How does this guide differ from the thousands of other guides out
           there?
         </h2>
-        <p>We're glad you asked!</p>
+        <p>
+          We're glad you asked! We've designed the material in these articles to
+          target the end goal of understanding and working with the MIT
+          Illumination lights. This means that there will be a heavier focus on
+          lighting and controlling lights. While there is a chapter on basic
+          electronics, we won't focus as heavily on the math, nor other common
+          electrical components. This doesn't mean they're not important! We
+          hope you use this guide as a starting point and opens the world of
+          electronics and lighting for you!
+        </p>
         <h2>Additional Information</h2>
         <p>
           Want to dive deeper into any of the materials in this guide? There are

@@ -8,22 +8,27 @@ const GuideImage = ({
   size,
   alt,
   caption,
+  border,
+  href,
 }: {
   src: string | string[];
   size?: ImageSize;
   alt?: string;
   caption?: string;
+  border?: boolean;
+  href?: string;
 }) => {
   if (typeof src === 'string') {
     return (
       <div className={styles.imageContainer}>
-        <a href={src} target="_blank">
+        <a href={href ? href : src} target="_blank">
           <img
             className={cx({
               [styles.small]: size === 'SMALL',
               [styles.medium]: size === 'MEDIUM',
               [styles.large]: size === 'LARGE',
               [styles.full]: size === 'FULL',
+              [styles.hideBorder]: border === false,
             })}
             src={src}
             alt={alt}

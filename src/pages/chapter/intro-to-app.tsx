@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
 
 import styles from '../../styles/Guide.module.scss';
@@ -11,7 +13,14 @@ const Page = ({ data }: any) => {
         <div className={styles.author}>
           By <a href="http://instagram.com/poofytoo">Victor Hung</a>
         </div>
-        <h2>Desktop App</h2>
+        <div className={styles.learningGoals}>
+          <h3>Goals of This Chapter</h3>
+          <ul>
+            <li>Download the Illuminations App</li>
+            <li>Create & Edit an Illuminations Light Show</li>
+          </ul>
+        </div>
+        <h2>Desktop Application</h2>
         <p>
           The software that runs the Illumination lights is an{' '}
           <a href="https://github.com/sosolimited/MIT-Illuminations">
@@ -21,6 +30,12 @@ const Page = ({ data }: any) => {
           hobbyist lighting units, making creating light shows easy and
           accessible.
         </p>
+        <GuideImage
+          border={false}
+          size="LARGE"
+          href="https://github.com/sosolimited/MIT-Illuminations"
+          src="/images/guide/illuminations-splash.png"
+        />
         <div className="boxed-note">
           <h3>Note:</h3>
           <p>
@@ -54,7 +69,38 @@ const Page = ({ data }: any) => {
             https://github.com/sosolimited/MIT-Illuminations/releases
           </a>
         </p>
-        <p></p>
+        <h2>Overview of the App</h2>
+        <GuideImage
+          border={false}
+          size="LARGE"
+          src="/images/guide/illuminations-home.png"
+        />
+        <p>
+          By default, the main screen of the Illuminations app contains a
+          variety of different shows, along with the current show that's playing
+          (on the left, "playing now"). For starters, let's click into one of
+          these shows and take a look closer at the editing panel.
+        </p>
+        <GuideImage
+          border={false}
+          size="LARGE"
+          src="/images/guide/app-overview.png"
+        />
+        <p>
+          The bulk of the screen shows the{' '}
+          <a href="https://p5js.org/" target="_blank">
+            p5.js
+          </a>{' '}
+          editor (1). That's the code running the lights! We'll go a little more
+          into p5.js in the <Link href="/chapter/p5-js">p5.js chapter</Link>{' '}
+          later, but one of the best ways to learn is to play around by changing
+          some values here and there to see if you can alter the behavior. The
+          color bar (2) is where the output of the code is rendered to and is
+          the 'canvas' that's being drawn on. To get the actual color the lights
+          show, the app samples colors from that canvas (3) and sends it to the
+          Illumination lights.
+        </p>
+        <h2>How to Create/Edit a Show</h2>
       </div>
     </div>
   );

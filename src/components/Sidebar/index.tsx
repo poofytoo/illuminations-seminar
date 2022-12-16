@@ -37,6 +37,11 @@ export const navigationLinks = [
     type: ['app'],
   },
   {
+    title: 'App & Arduino',
+    href: '/illuminations-and-arduino',
+    type: ['app', 'arduino'],
+  },
+  {
     title: 'Slit Scan Photography',
     href: '/slit-scan',
     type: ['app'],

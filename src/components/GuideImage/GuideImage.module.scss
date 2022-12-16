@@ -33,6 +33,10 @@
     max-width: 300px;
   }
 
+  .hideBorder {
+    border: none;
+  }
+
   &:hover {
     filter: brightness(1.1);
   }

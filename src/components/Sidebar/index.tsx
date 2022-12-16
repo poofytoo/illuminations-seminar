@@ -26,7 +26,7 @@ export const navigationLinks = [
     type: ['arduino'],
   },
   {
-    title: 'WS2812B LEDs',
+    title: 'WS2812b LEDs',
     href: '/ws2812b',
     type: ['arduino'],
   },

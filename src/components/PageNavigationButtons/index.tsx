@@ -17,7 +17,6 @@ const PageNavigationButtons = () => {
   const pageId = navigationLinks
     .map((link, key) => link.href)
     .indexOf(activePage.split('/chapter')[1]);
-  console.log(activePage);
   let searchId = pageId;
   if (pageId !== -1) {
     while (!nextPage?.href && searchId < navigationLinks.length) {

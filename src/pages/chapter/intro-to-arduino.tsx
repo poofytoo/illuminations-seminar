@@ -34,7 +34,6 @@ export async function getStaticProps() {
 }
 
 const Page = ({ data }: any) => {
-  console.log(data);
   return (
     <div className={styles.appWrapper}>
       <Sidebar />

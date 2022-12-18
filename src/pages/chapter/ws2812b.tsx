@@ -1,7 +1,69 @@
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism-twilight.min.css';
+
 import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
 
 import styles from '../../styles/Guide.module.scss';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
+
+const arduinoCode = `#include <FastLED.h>
+
+// How many leds in your strip?
+#define NUM_LEDS 24 
+
+// For led chips like Neopixels, which have a data line, ground, and power, you just
+// need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
+// ground, and power), like the LPD8806, define both DATA_PIN and CLOCK_PIN
+#define DATA_PIN 6
+#define CLOCK_PIN 13
+
+// Define the array of leds
+CRGB leds[NUM_LEDS];
+
+void setup() { 
+  Serial.begin(57600);
+  Serial.println("resetting");
+  FastLED.addLeds<WS2812,DATA_PIN,RGB>(leds,NUM_LEDS);
+  FastLED.setBrightness(84);
+}
+
+void fadeall() { for(int i = 0; i < NUM_LEDS; i++) { leds[i].nscale8(250); } }
+
+void loop() { 
+  static uint8_t hue = 0;
+  Serial.print("x");
+  // First slide the led in one direction
+  for(int i = 0; i < NUM_LEDS; i++) {
+    // Set the i'th led to red 
+    leds[i] = CHSV(hue++, 255, 255);
+    // Show the leds
+    FastLED.show(); 
+    // now that we've shown the leds, reset the i'th led to black
+    // leds[i] = CRGB::Black;
+    fadeall();
+    // Wait a little bit before we loop around and do it again
+    delay(10);
+  }
+  Serial.print("x");
+
+  // Now go in the other direction.  
+  for(int i = (NUM_LEDS)-1; i >= 0; i--) {
+    // Set the i'th led to red 
+    leds[i] = CHSV(hue++, 255, 255);
+    // Show the leds
+    FastLED.show();
+    // now that we've shown the leds, reset the i'th led to black
+    // leds[i] = CRGB::Black;
+    fadeall();
+    // Wait a little bit before we loop around and do it again
+    delay(10);
+  }
+}
+`;
 
 const Page = ({ data }: any) => {
   return (
@@ -136,6 +198,69 @@ const Page = ({ data }: any) => {
           misbehaving.
         </p>
         <h2>Upload a Program!</h2>
+        <p>
+          To communicate with these LED lights, we're going to use a library
+          called{' '}
+          <a href="https://fastled.io/" target="_blank">
+            FastLED
+          </a>
+          . Libraries (like this one) take a lot of the hassle out of writing
+          code for a specific component from scratch. Better yet, they usually
+          come with a lot of examples that you can use as a starting point for
+          your own projects.
+        </p>
+        <p>
+          One way to add a library is to install one using Arduino's built in{' '}
+          <strong>Library Manager</strong>. Open Arduino IDE and then go to{' '}
+          <code>Sketch &gt; Include Library &gt; Manage Libraries</code>. Search
+          for <strong>FastLED</strong> and then click <strong>Install</strong>.
+        </p>
+        <p>
+          Next, let's open up an example sketch and try making our lights change
+          colors. Go to <code>File &gt; Examples &gt; FastLED &gt; Cylon</code>
+        </p>
+        <p>
+          When you open up the code, take a quick read through it. You'll notice
+          there are 2 variables that are relevant to us. <code>NUM_LEDS</code>{' '}
+          is the number of LEDs in your strip - you may have more than what
+          we're able to power. Set that to a low number like 24. The second
+          variable is <code>DATA_PIN</code>, which is set to 2. Change that to 6
+          (since you're using pin 6 on the Arduino).
+        </p>
+        <p>
+          You can leave <code>CLOCK_PIN</code> untouched since we're not using
+          that anyway. The code you end up with should look something like this:
+        </p>
+        <Editor
+          value={arduinoCode}
+          onValueChange={() => {}}
+          highlight={(code) => highlight(code, languages.js, 'javascript')}
+          padding={20}
+          style={{
+            overflow: 'visible',
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 14,
+          }}
+        />
+        <p>
+          When you hit <strong>upload</strong> (you may have to make sure the
+          port and settings are correct!) your LED strips should start to light
+          up in a cool pattern! Give yourself a pat on the back if you made it
+          this far. You deserve it!
+        </p>
+        <p>
+          Play around with different examples and take a look at the code.
+          There's a great tutorial on Instructables which explains the world of
+          the FastLED library, which you can{' '}
+          <a
+            href="https://www.instructables.com/Basic-of-FastLED/"
+            target="_blank"
+          >
+            find here
+          </a>
+          .
+        </p>
+        <PageNavigationButtons />
       </div>
     </div>
   );

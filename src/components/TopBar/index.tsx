@@ -13,9 +13,9 @@ const TopBar = () => {
           <div className={styles.home}>learn.illuminations</div>
         </Link>
 
-        <Link href={'https://accessibility.mit.edu'}>
+        <a href={'https://accessibility.mit.edu'} target="_blank">
           <div className={styles.accessibility}>Accessibility</div>
-        </Link>
+        </a>
       </div>
     </>
   );

@@ -24,17 +24,23 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-.home {
+.home,
+.accessibility {
   padding: 10px 20px;
   font-size: 16px;
   display: inline-block;
-  opacity: 0.5;
+  opacity: 0.6;
 
   &:hover {
     opacity: 1;
     cursor: pointer;
     background-color: #333;
   }
+}
+
+.accessibility {
+  opacity: 0.9;
+  float: right;
 }
 
 @media (max-width: 900px) {

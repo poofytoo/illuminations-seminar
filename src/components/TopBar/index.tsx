@@ -10,7 +10,11 @@ const TopBar = () => {
       <div className={styles.topBar}></div>
       <div className={styles.topBar2}>
         <Link href={'/chapter/hello'}>
-          <div className={styles.home}>learn.illluminations</div>
+          <div className={styles.home}>learn.illuminations</div>
+        </Link>
+
+        <Link href={'https://accessibility.mit.edu'}>
+          <div className={styles.accessibility}>Accessibility</div>
         </Link>
       </div>
     </>

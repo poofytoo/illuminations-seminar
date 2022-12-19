@@ -9,6 +9,16 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>The Photoresistor</h1>
+        <div className={styles.author}>
+          by <a href="http://instagram.com/poofytoo">Victor Hung</a>
+        </div>
+        <div className={styles.learningGoals}>
+          <h3>Goals of This Chapter</h3>
+          <ul>
+            <li>Use the Analog In pin on the Arduino</li>
+            <li>Understand a simple variable resistor (the photoresistor)</li>
+          </ul>
+        </div>
         <h2>Introduction</h2>
         <p>
           Having the LED strip change based on the environment is a great way to
@@ -72,7 +82,7 @@ const Page = ({ data }: any) => {
         />
         <p>
           In this example, when the photoresistor is exposed to bright light,
-          the resistance is 10k&#8486;, meaning the top and bottom resistances
+          the resistance is 10k&#8486;, meani ng the top and bottom resistances
           are both 10k&#8486;, meaning that A0 is split right down the middle
           (half of 5V) which is <strong>2.5V</strong>.
         </p>

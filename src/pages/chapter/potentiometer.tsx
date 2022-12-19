@@ -9,6 +9,15 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>The Potentiometer</h1>
+        <div className={styles.author}>
+          by <a href="http://instagram.com/poofytoo">Victor Hung</a>
+        </div>
+        <div className={styles.learningGoals}>
+          <h3>Goals of This Chapter</h3>
+          <ul>
+            <li>Understand how to use a potentiometer</li>
+          </ul>
+        </div>
         <h2>Pots!</h2>
         <p>
           A potentiometer (affectionately known as a pot) is a three-terminal

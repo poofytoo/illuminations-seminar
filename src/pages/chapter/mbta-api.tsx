@@ -20,7 +20,7 @@ const w = 1200;
 const h = 100;
 
 // URL which fetches the predictions of the kendall station
-const url = "https://api-v3.mbta.com/predictions?filter%5Bstop%5D=place-knncl&api_key=05327b8cd8b546dc945b5b79ed66a173";
+const url = "https://api-v3.mbta.com/predictions?filter%5Bstop%5D=place-knncl&api_key=[your api key here]";
 
 let prevMs = 0;
 let backgroundColor = 0;
@@ -83,6 +83,16 @@ function draw() {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>APIs</h1>
+        <div className={styles.author}>
+          By <a href="http://instagram.com/poofytoo">Victor Hung</a>
+        </div>
+        <div className={styles.learningGoals}>
+          <h3>Goals of This Chapter</h3>
+          <ul>
+            <li>Learn the basics of an API</li>
+            <li>Play with an example API</li>
+          </ul>
+        </div>
         <h2>What is an API?</h2>
         <p>
           An API is short for Application Programming Interface. This isn't

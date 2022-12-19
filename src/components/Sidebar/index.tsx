@@ -47,11 +47,7 @@ export const navigationLinks = [
     type: ['app'],
   },
   { title: 'p5.js', href: '/p5-js', type: ['app'] },
-  {
-    title: 'Best Practices',
-    href: '/best-practices',
-    type: ['app'],
-  },
+
   { heading: 'Making it Dynamic' },
   {
     title: 'Inputs & Buttons',

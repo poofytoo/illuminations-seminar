@@ -25,7 +25,7 @@ const GuideImage = ({
           <img
             className={cx({
               [styles.small]: size === 'SMALL',
-              [styles.medium]: size === 'MEDIUM',
+              [styles.medium]: size === 'MEDIUM' || size == undefined,
               [styles.large]: size === 'LARGE',
               [styles.full]: size === 'FULL',
               [styles.hideBorder]: border === false,

@@ -45,6 +45,9 @@
 }
 
 @media (max-width: 900px) {
+  .accessibility {
+    display: none;
+  }
   .topBar2 {
     text-align: right;
     background: transparent;

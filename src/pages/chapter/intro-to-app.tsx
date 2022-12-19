@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import GuideImage from '../../components/GuideImage';
+import PageNavigationButtons from '../../components/PageNavigationButtons';
 import Sidebar from '../../components/Sidebar';
 
 import styles from '../../styles/Guide.module.scss';
@@ -11,7 +12,8 @@ const Page = ({ data }: any) => {
       <div className={styles.guideContent}>
         <h1>Introduction to the Illuminations App</h1>
         <div className={styles.author}>
-          By <a href="http://instagram.com/poofytoo">Victor Hung</a>
+          By <a href="https://ceriley.com/">Ceri Riley</a>, Miguel Padilla, &{' '}
+          <a href="http://instagram.com/poofytoo">Victor Hung</a>
         </div>
         <div className={styles.learningGoals}>
           <h3>Goals of This Chapter</h3>
@@ -20,6 +22,19 @@ const Page = ({ data }: any) => {
             <li>Create & Edit an Illuminations Light Show</li>
           </ul>
         </div>
+        <h2>Overview</h2>
+        <p>
+          Let's shift gears a little bit and take a look back at the lights that
+          run in the MIT Welcome Center. There's a dedicated app that's built to
+          run the lights, and it's available for you to play with! While you
+          won't be able to directly control the live lights in the building,
+          there are ways you can use the app to create your own light shows and
+          share them.
+        </p>
+        <GuideImage
+          src="/images/guide/illuminations-interior.jpg"
+          size="LARGE"
+        />
         <h2>Desktop Application</h2>
         <p>
           The software that runs the Illumination lights is an{' '}
@@ -101,6 +116,51 @@ const Page = ({ data }: any) => {
           Illumination lights.
         </p>
         <h2>How to Create/Edit a Show</h2>
+        <p>
+          There are a variety of different template shows that can serve as a
+          base to create new shows. Click into one and then click the{' '}
+          <code>COPY TO NEW SHOW</code> button at the top of the screen to
+          create a new show entitles Copy of [Template name] where you can begin
+          experimenting with the settings.
+        </p>
+        <GuideImage
+          border={false}
+          size="LARGE"
+          src="/images/guide/copy-of-new-show.png"
+        />
+        <p>
+          Depending on which show you copied, the <code>CONTROLS</code> section
+          will give you some user-friendly interfaces to adjust variables within
+          the code, like the color (inputted as RGB/HEX) or speed (via a slider
+          bar) or the lights. You can change these and hit{' '}
+          <code>SAVE / PREVIEW</code> if you'd like to see the updated changes,
+          or hit <code>PUBLISH</code> if you'd like to set this to be the
+          current playing show.
+        </p>
+        <p>
+          The <code>CODE</code> section will give you more granular control over
+          how the lights are functioning, such as if you want to adjust the
+          speed beyond what a control module allows you to, connect a different
+          API for data, or otherwise do cool/weird/fun things with the lights
+          and light outputs.
+        </p>
+        <ul>
+          <li>
+            The code is written in p5.js, which we'll talk about in a later
+            section.
+          </li>
+          <li>
+            The text beneath the title of each control panel tells you the
+            relevant code value (e.g. control.color1.value or
+            controls.scanSpeed.value).
+          </li>
+          <li>
+            Click <code>RUN</code> to check your code animation, and the{' '}
+            <code>CONSOLE</code> or <code>HELP</code> buttons if you need some
+            assistance debugging.
+          </li>
+        </ul>
+        <PageNavigationButtons />
       </div>
     </div>
   );

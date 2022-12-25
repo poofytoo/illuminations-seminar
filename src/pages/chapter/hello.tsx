@@ -1,5 +1,5 @@
 import GuideImage from '../../components/GuideImage';
-import Sidebar from '../../components/Sidebar';
+import Sidebar, { navigationLinks } from '../../components/Sidebar';
 import PageNavigationButtons from '../../components/PageNavigationButtons';
 import Link from 'next/link';
 
@@ -19,8 +19,8 @@ const Page = ({ data }: any) => {
           <a href="https://illuminations.mit.edu" target="_blank">
             MIT Illuminations
           </a>
-          . MIT Illuminations is an ongoing experiment in creative computation
-          at the MIT Welcome Center located in{' '}
+          , an ongoing experiment in creative computation at the MIT Welcome
+          Center located in{' '}
           <a
             href="https://www.google.com/maps/place/MIT+Welcome+Center/@42.3621496,-71.0858094,15z/data=!4m2!3m1!1s0x0:0x5655bc63bb8beefe?sa=X&ved=2ahUKEwjHyJqm7rD7AhU-FFkFHQ_3BWMQ_BJ6BAh0EAg"
             target="_BLANK"
@@ -34,13 +34,16 @@ const Page = ({ data }: any) => {
           size="LARGE"
         />
         <p>
-          The lights dynamically illuminating the center are, like the MIT
-          community, colorful, ever-changing, and alive. They were inspired by a
-          long history of the MIT community deploying creative installations of
-          colorful lights in dormitories, on bridges and buildings, and around
-          campus. Meanwhile, the software driving the lights is published under
-          the open-source MIT license, so anyone in the world can learn how to
-          make their own.
+          The lights dynamically illuminating the Welcome Center are, like the
+          MIT community, colorful, ever-changing, and alive. They're inspired by
+          a long history of the MIT community deploying creative installations
+          of colorful lights in dormitories, on bridges and buildings, and
+          around campus. Meanwhile, the software driving the lights is published
+          under the{' '}
+          <a href="https://opensource.org/licenses/MIT" target="_blank">
+            open-source MIT license
+          </a>
+          , so anyone in the world can learn how to make their own.
         </p>
         <GuideImage
           src={[
@@ -52,40 +55,33 @@ const Page = ({ data }: any) => {
           What is <span className={styles.special}>Learn.Illuminations</span>?
         </h2>
         <p>
-          Learn.Illuminations is a guide specifically put together to help
-          individuals (like you!) understand the basics of electronics,
-          lighting, and eventually be able to program your own lighting sequence
-          that could be run on the lights at the MIT welcome center.
-        </p>
-        <p>
-          To work up to the big Illumination lights, we'll walk you through how
-          to build your own, home version of the illuminations lights by using a
-          microcontroller called an Arduino to communicate with a strip of
-          individually addressable LED lights. The Arduino is an open source
-          microcontroller that's great for prototyping digital devices. If you
-          don't know what any of this means - don't worry! We'll explain it in
-          the next section.
+          We'll walk you through how to build your own version of MIT
+          Illuminations at home, by using an open-source microcontroller called
+          an Arduino to communicate with a strip of individually addressable LED
+          lights. If you don't know what that means - don't worry! This guide is
+          designed for a wide audience, from beginners with no electronics
+          experience to veterans who have prototyped digital devices before. If
+          you're not interested in learning all the nitty-gritty details of
+          electronics, feel free to
         </p>
         <p>
           If you're not interested in learning all the nitty gritty details of
           electronics, feel free to{' '}
           <Link href="/chapter/intro-to-app">
-            Jump straight to the Illuminations App!
+            jump straight to the Illuminations App!
           </Link>
         </p>
-        <h2>How to use this Learning Guide</h2>
+        <h2>How do I use this guide?</h2>
         <p>
-          This learning guide is designed for a wide audience - from beginners
-          with no experience to individuals who have some experience with
-          electronics. We'll go over a whole lot of content and touch on a bunch
-          of names and terminologies. Nonetheless, the goal is always just to
-          give you an introduction and touch upon specific things, which will
-          hopefully open the door for you to explore further and help you build
-          your online search term intuition.
+          The goal of Learn.Illuminations is to give you an introduction to the
+          science and language of light installations, and to explain how MIT
+          Illuminations works. These fundamentals will hopefully help you build
+          your online search intuition and open the door for you to explore
+          further.
         </p>
         <p>
-          The content is split up into multiple chapters. There are also labels
-          that help give you a preview to what the chapter is about.
+          The content in this guide is split up into multiple chapters, with
+          labels that indicate what each chapter is about.
         </p>
         <table className={styles.legend}>
           <tbody>
@@ -114,36 +110,35 @@ const Page = ({ data }: any) => {
               </td>
               <td valign="top">
                 <strong>MIT Illuminations Application</strong> • This icon means
-                we'll be using the Illuminations App to simulate/control lights!
-                This is the same app used to control Illuminations in the
-                welcome center.
+                we'll be using the MIT Illuminations App to simulate/control
+                lights! This is the same app used to control Illuminations in
+                the welcome center.
               </td>
             </tr>
           </tbody>
         </table>
         <p>
-          If you're interested in the Arduino portions (which we highly
-          recommend, as it'll go over how to get your own blinky lights at
-          home!) the third chapter will go over a list of recommended components
-          to obtain. You can{' '}
+          If you're interested in building your own blinky lights at home,{' '}
           <Link href="/chapter/intro-to-arduino#components">
-            jump ahead to that list here
-          </Link>
-          .
+            Chapter 3. Intro to Arduino!
+          </Link>{' '}
+          contains a list of recommended components!
         </p>
         <h2>
           How does this guide differ from the thousands of other guides out
           there?
         </h2>
         <p>
-          We're glad you asked! We've designed the material in these articles to
-          target the end goal of understanding and working with the MIT
-          Illumination lights. This means that there will be a heavier focus on
-          lighting and controlling lights. While there is a chapter on basic
-          electronics, we won't focus as heavily on the math, nor other common
-          electrical components. This doesn't mean they're not important! We
-          hope you use this guide as a starting point and opens the world of
-          electronics and lighting for you!
+          We're glad you asked! These{' '}
+          {navigationLinks.filter((item) => item.heading === undefined).length}{' '}
+          chapters build to an end goal of understanding and working with the
+          MIT Illuminations lights. This means that there will be a heavier
+          focus on lighting and controlling lights within one particular app.
+          While there is a chapter on basic electronics, we won't focus as
+          heavily on the math, nor other common electrical components. This
+          doesn't mean they're not important! We hope that this guide serves as
+          a starting point for you to explore the world of electronics and
+          lighting!
         </p>
         <h2>Additional Information</h2>
         <p>
@@ -152,27 +147,28 @@ const Page = ({ data }: any) => {
         </p>
         <ul>
           <li>
-            <a href="https://www.adafruit.com/">AdaFruit</a> an open-source
+            <a href="https://www.adafruit.com/">AdaFruit</a> is an open-source
             hardware company based in New York City that sells great, reliable,
-            beginner-electronic friendly parts as well as a provider of great
-            tutorials and guides.
+            beginner-electronic friendly parts. It also has great tutorials and
+            guides.
           </li>
           <li>
-            <a href="https://www.instructables.com/">Instructables</a> a website
-            specializing in user-created and uploaded do-it-yourself projects
+            <a href="https://www.instructables.com/">Instructables</a> is a
+            website specializing in user-created and -uploaded do-it-yourself
+            projects
           </li>
         </ul>
         <p>
-          This guide itself is also open source and{' '}
+          This guide is also open source and{' '}
           <a
             href="https://github.com/poofytoo/illuminations-seminar"
             target="_blank"
           >
             found on GitHub here
           </a>
-          . If you spot anything wrong, feel free to leave a issue - or if you
-          want to contribute, feel free to submit a pull request! We're excited
-          to help the community build more awesome blinky lights.
+          . If you spot anything wrong, feel free to leave an issue. If you want
+          to contribute, feel free to submit a pull request! We're excited to
+          help everyone in the world build more awesome blinky lights.
         </p>
         <PageNavigationButtons />
       </div>

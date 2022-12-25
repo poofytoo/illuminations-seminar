@@ -9,7 +9,7 @@ const TopBar = () => {
     <>
       <div className={styles.topBar}></div>
       <div className={styles.topBar2}>
-        <Link href={'/chapter/hello'}>
+        <Link href={'/'}>
           <div className={styles.home}>learn.illuminations</div>
         </Link>
 

@@ -1,193 +1,179 @@
-import type { NextPage } from 'next';
-import { google } from 'googleapis';
+import GuideImage from '../components/GuideImage';
+import Sidebar, { navigationLinks } from '../components/Sidebar';
+import PageNavigationButtons from '../components/PageNavigationButtons';
 import Link from 'next/link';
 
-import styles from '../styles/Home.module.scss';
-import GoogleParser from '../components/GoogleParser';
+import styles from './../styles/Guide.module.scss';
+import sidebar from './../components/Sidebar/Sidebar.module.scss';
+import cx from 'classnames';
 
-export async function getStaticProps() {
-  const documentId = '1S2gIcxddk0iilI6K54nibhUT5H8SeIaD9JIrEwQJiSs';
-  const client = new google.auth.JWT({
-    email: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
-    scopes: ['https://www.googleapis.com/auth/documents'],
-    key: process.env.NEXT_PUBLIC_PRIVATE_KEY,
-  });
-
-  await client.authorize();
-
-  const gsapi = google.docs({ version: 'v1', auth: client });
-  const opt = {
-    documentId,
-  };
-
-  const data = await gsapi.documents.get(opt);
-  return {
-    props: {
-      data: data.data,
-    },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 5 seconds
-    revalidate: 5, // In seconds
-  };
-}
-
-const Home: NextPage = ({ data }: any) => {
+const Page = ({ data }: any) => {
   return (
-    <>
-      <div className={styles.buttonContainer}>
-        <Link href="/chapter/hello">
-          <div className={styles.button}>
-            Check out the Illuminations Learning Resource Here! <br />
-            (Work in Progress)
-          </div>
-        </Link>
+    <div className={styles.appWrapper}>
+      <Sidebar />
+      <div className={styles.guideContent}>
+        <h1>Hello!</h1>
+        <h2>Welcome!</h2>
+        <p>
+          This is the learning guide for{' '}
+          <a href="https://illuminations.mit.edu" target="_blank">
+            MIT Illuminations
+          </a>
+          , an ongoing experiment in creative computation at the MIT Welcome
+          Center located in{' '}
+          <a
+            href="https://www.google.com/maps/place/MIT+Welcome+Center/@42.3621496,-71.0858094,15z/data=!4m2!3m1!1s0x0:0x5655bc63bb8beefe?sa=X&ved=2ahUKEwjHyJqm7rD7AhU-FFkFHQ_3BWMQ_BJ6BAh0EAg"
+            target="_BLANK"
+          >
+            Kendall Square
+          </a>
+          .
+        </p>
+        <GuideImage
+          src="/images/guide/welcome-center-exterior.jpg"
+          size="LARGE"
+        />
+        <p>
+          The lights dynamically illuminating the Welcome Center are, like the
+          MIT community, colorful, ever-changing, and alive. They're inspired by
+          a long history of the MIT community deploying creative installations
+          of colorful lights in dormitories, on bridges and buildings, and
+          around campus. Meanwhile, the software driving the lights is published
+          under the{' '}
+          <a href="https://opensource.org/licenses/MIT" target="_blank">
+            open-source MIT license
+          </a>
+          , so anyone in the world can learn how to make their own.
+        </p>
+        <GuideImage
+          src={[
+            '/images/guide/illuminations-interior.jpg',
+            '/images/guide/illuminations-closeup.jpg',
+          ]}
+        />
+        <h2>
+          What is <span className={styles.special}>Learn.Illuminations</span>?
+        </h2>
+        <p>
+          We'll walk you through how to build your own version of MIT
+          Illuminations at home, by using an open-source microcontroller called
+          an Arduino to communicate with a strip of individually addressable LED
+          lights. If you don't know what that means - don't worry! This guide is
+          designed for a wide audience, from beginners with no electronics
+          experience to veterans who have prototyped digital devices before. If
+          you're not interested in learning all the nitty-gritty details of
+          electronics, feel free to
+        </p>
+        <p>
+          If you're not interested in learning all the nitty gritty details of
+          electronics, feel free to{' '}
+          <Link href="/chapter/intro-to-app">
+            jump straight to the Illuminations App!
+          </Link>
+        </p>
+        <h2>How do I use this guide?</h2>
+        <p>
+          The goal of Learn.Illuminations is to give you an introduction to the
+          science and language of light installations, and to explain how MIT
+          Illuminations works. These fundamentals will hopefully help you build
+          your online search intuition and open the door for you to explore
+          further.
+        </p>
+        <p>
+          The content in this guide is split up into multiple chapters, with
+          labels that indicate what each chapter is about.
+        </p>
+        <table className={styles.legend}>
+          <tbody>
+            <tr>
+              <td valign="top">
+                <span
+                  className={cx(
+                    sidebar.arduino,
+                    sidebar.type,
+                    styles.largeIcons
+                  )}
+                ></span>
+              </td>
+              <td valign="top">
+                <strong>Arduino</strong> • If you see this icon, this means the
+                chapter will contain information on working with an Arduino.
+                Information on the next page will give you a sense of how to
+                procure some of these materials.
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <span
+                  className={cx(sidebar.app, sidebar.type, styles.largeIcons)}
+                ></span>
+              </td>
+              <td valign="top">
+                <strong>MIT Illuminations Application</strong> • This icon means
+                we'll be using the MIT Illuminations App to simulate/control
+                lights! This is the same app used to control Illuminations in
+                the welcome center.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          If you're interested in building your own blinky lights at home,{' '}
+          <Link href="/chapter/intro-to-arduino#components">
+            Chapter 3. Intro to Arduino!
+          </Link>{' '}
+          contains a list of recommended components!
+        </p>
+        <h2>
+          How does this guide differ from the thousands of other guides out
+          there?
+        </h2>
+        <p>
+          We're glad you asked! These{' '}
+          {navigationLinks.filter((item) => item.heading === undefined).length}{' '}
+          chapters build to an end goal of understanding and working with the
+          MIT Illuminations lights. This means that there will be a heavier
+          focus on lighting and controlling lights within one particular app.
+          While there is a chapter on basic electronics, we won't focus as
+          heavily on the math, nor other common electrical components. This
+          doesn't mean they're not important! We hope that this guide serves as
+          a starting point for you to explore the world of electronics and
+          lighting!
+        </p>
+        <h2>Additional Information</h2>
+        <p>
+          Want to dive deeper into any of the materials in this guide? There are
+          a couple of resources we recommend:
+        </p>
+        <ul>
+          <li>
+            <a href="https://www.adafruit.com/">AdaFruit</a> is an open-source
+            hardware company based in New York City that sells great, reliable,
+            beginner-electronic friendly parts. It also has great tutorials and
+            guides.
+          </li>
+          <li>
+            <a href="https://www.instructables.com/">Instructables</a> is a
+            website specializing in user-created and -uploaded do-it-yourself
+            projects
+          </li>
+        </ul>
+        <p>
+          This guide is also open source and{' '}
+          <a
+            href="https://github.com/poofytoo/illuminations-seminar"
+            target="_blank"
+          >
+            found on GitHub here
+          </a>
+          . If you spot anything wrong, feel free to leave an issue. If you want
+          to contribute, feel free to submit a pull request! We're excited to
+          help everyone in the world build more awesome blinky lights.
+        </p>
+        <PageNavigationButtons />
       </div>
-      <div className={styles.buttonContainer}>
-        <Link href="https://www.dropbox.com/request/zvW4TiF1oiqb3mv9z9ND">
-          <div className={styles.button}>Write-up Submission</div>
-        </Link>
-      </div>
-      <div className={styles.centerContainer}>
-        <div className={styles.contentContainer}>
-          <div className={styles.circleContainer}>
-            <div className={styles.circle} />
-          </div>
-          <div className={styles.textContent}>
-            <h1>
-              <strong>6.A01 · ILLUMINATIONS</strong> SEMINAR
-            </h1>
-            <p className={'dem'}>
-              contact:{' '}
-              <a href="mailto:illuminations-staff@mit.edu">
-                illuminations-staff@mit.edu
-              </a>
-            </p>
-            <p>
-              Hello! The Fall 2022 MIT Illuminations Seminar is a first-year,
-              3-unit seminar designed to introduce students to the basics of
-              electronics and lighting through hands-on experimentation and
-              integration with the context of a dynamic light installation at
-              the MIT Welcome Center called{' '}
-              <a href="https://illuminations.mit.edu">MIT Illuminations</a>.
-            </p>
-            <p>
-              During the semester, this website will contain information
-              relevant to the class, including lecture notes & additional
-              resources. As the semester wraps up, items here will be archived
-              as open-source learning material for those who wish to contribute
-              to the MIT Welcome Center!
-            </p>
-            <p>
-              <span className={'dem'}>Lead Advisor:</span> Chris Peterson{' '}
-              <a href="mailto:petey@mit.edu">petey@mit.edu</a>
-              <br />
-              <span className={'dem'}>Lead Instructor:</span> Victor Hung{' '}
-              <a href="mailto:vhung@mit.edu">vhung@mit.edu</a>
-            </p>
-            <GoogleParser rawData={data} />
-            <h2 className="blue">Lecture Notes</h2>
-            <ul className="slides-list">
-              <li>
-                Hello and Welcome!
-                <Link href="/slides/slides1.pdf">
-                  <div className="resource-button">Slides</div>
-                </Link>
-              </li>
-              <li>
-                Electronics 101
-                <Link href="/slides/slides2.pdf">
-                  <div className="resource-button">Slides</div>
-                </Link>
-              </li>
-              <li>
-                <div>LED Arrays & WS2812B</div>
-                <div className="no-wrap">
-                  <Link href="/handouts/handout3.pdf">
-                    <div className="resource-button">Handout</div>
-                  </Link>
-                  <Link href="/slides/slides3.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>Arduino Communication</div>
-                <div className="no-wrap">
-                  <Link href="https://docs.google.com/document/d/1fKwelZp6m6lmYmVyhJrSoUUHCThntiso6fvIo4sDTn8/edit?usp=sharing">
-                    <div className="resource-button">Handout</div>
-                  </Link>
-                  <Link href="/slides/slides4.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>This Time with Feeling</div>
-                <div className="no-wrap">
-                  <Link href="https://docs.google.com/document/d/1F-bwqSela4taOxqhqnhU6WC122cONZ2tgXrz2-z0w3g">
-                    <div className="resource-button">Final Project</div>
-                  </Link>
-                  <Link href="/slides/slides5.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>Final Project & SOSO</div>
-                <div className="no-wrap actually-wrap">
-                  <Link href="https://illuminations.mit.edu/">
-                    <div className="resource-button">Download Software</div>
-                  </Link>
-                  <Link href="/slides/slides6.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                  <Link href="/slides/soso1.pdf">
-                    <div className="resource-button">SOSO Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>Emotional Design & SOSO</div>
-                <div className="no-wrap">
-                  <Link href="/slides/slides7.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                  <Link href="/slides/soso2.pdf">
-                    <div className="resource-button">SOSO Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>Principles of Light & Diffusers</div>
-                <div className="no-wrap">
-                  <Link href="/slides/slides8.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>Inputs & Making it Dynamic</div>
-                <div className="no-wrap">
-                  <Link href="/slides/slides9.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>GitHub & Law Clinic</div>
-                <div className="no-wrap">
-                  <Link href="/slides/slides10.pdf">
-                    <div className="resource-button">Slides</div>
-                  </Link>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default Page;

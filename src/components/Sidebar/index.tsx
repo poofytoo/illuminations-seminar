@@ -9,64 +9,64 @@ export const navigationLinks = [
   { heading: 'Introduction' },
   {
     title: 'Hello!',
-    href: '/hello',
+    href: '/',
   },
   {
     title: 'Basics of Electronics',
-    href: '/electronics',
+    href: '/chapter/electronics',
   },
   {
     title: 'Intro to Arduino!',
-    href: '/intro-to-arduino',
+    href: '/chapter/intro-to-arduino',
     type: ['arduino'],
   },
   {
     title: 'Blinking an LED',
-    href: '/blink',
+    href: '/chapter/blink',
     type: ['arduino'],
   },
   {
     title: 'WS2812b LEDs',
-    href: '/ws2812b',
+    href: '/chapter/ws2812b',
     type: ['arduino'],
   },
   { heading: 'The Illuminations App' },
   {
     title: 'Illuminations App',
-    href: '/intro-to-app',
+    href: '/chapter/intro-to-app',
     type: ['app'],
   },
   {
     title: 'App & Arduino',
-    href: '/illuminations-and-arduino',
+    href: '/chapter/illuminations-and-arduino',
     type: ['app', 'arduino'],
   },
   {
     title: 'Slit Scan Photography',
-    href: '/slit-scan',
+    href: '/chapter/slit-scan',
     type: ['app'],
   },
-  { title: 'p5.js', href: '/p5-js', type: ['app'] },
+  { title: 'p5.js', href: '/chapter/p5-js', type: ['app'] },
 
   { heading: 'Making it Dynamic' },
   {
     title: 'Inputs & Buttons',
-    href: '/inputs',
+    href: '/chapter/inputs',
     type: ['arduino'],
   },
   {
     title: 'Analog In',
-    href: '/analog-in',
+    href: '/chapter/analog-in',
     type: ['arduino'],
   },
   {
     title: 'Potentiometers',
-    href: '/potentiometer',
+    href: '/chapter/potentiometer',
     type: ['arduino'],
   },
   {
     title: 'MBTA API',
-    href: '/mbta-api',
+    href: '/chapter/mbta-api',
     type: ['app'],
   },
 ];
@@ -92,7 +92,7 @@ const SidebarContent = () => {
           if (link.href) {
             id += 1;
             return (
-              <Link key={key} href={`/chapter${link.href}`}>
+              <Link key={key} href={`${link.href}`}>
                 <li
                   className={cx({
                     [styles.active]: activePage === `/chapter${link.href}`,

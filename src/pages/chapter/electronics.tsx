@@ -21,66 +21,78 @@ const Page = ({ data }: any) => {
         </div>
         <h2>An Introductory Spark</h2>
         <p>
-          Illuminations, in reality, is just a series of lights coordinated
-          through a computer to turn on and at specific colors at specific
-          times. To understand this, let's start from the beginning, starting
-          with how how a basic circuit works.
+          MIT Illuminations is just a series of lights coordinated through a
+          computer to turn on at specific colors at specific times. To explain
+          how these lights work, we first have to understand the basics of
+          electricity.
         </p>
         <p>
-          There are two types of electricity: direct current (DC) and
-          alternating current (AC). If you're in the United States (and most
-          countries) the electricity you use in your home, whenever you plug in
-          a device to an outlet or the electricity you see on the power lines
-          outside - that is AC.
+          There are two types of electricity:{' '}
+          <strong>alternating current (AC)</strong> and{' '}
+          <strong>direct current (DC)</strong>. If you're in the United States
+          (and most countries) the electricity you use whenever you plug in a
+          device to an outlet is AC. When you power a device with a battery,
+          that's a small, safe, and manageable amount of DC.
         </p>
-        <p>
-          For this learning guide, we'll be using DC (at a small, safe, and
-          manageable amount.) Let's look at a DC circuit to start.
-        </p>
+        <p>For this learning guide, we'll be using DC!</p>
         <GuideImage
           src="/images/guide/battery-bulb-circuit.png"
           size="MEDIUM"
         />
         <p>
-          Above you can see a diagram of a simple circuit. The black lines
-          represent wires, and in this case, there is a black line (the top one)
-          going from the battery (the positive terminal) to the bulb, and then
-          from the bulb back to the negative terminal of the battery.
+          Above you can see a diagram of a simple DC circuit - the electricity
+          is coming from the battery and powering a light bulb. The battery, in
+          this case, is our <strong>power source</strong>, and the light bulb is
+          our <strong>load</strong>.
         </p>
         <p>
-          This forms a closed circuit, the basis behind all circuits.
+          The black lines represent <strong>wires</strong>. You can see that the
+          top black line - or wire - goes from the positive terminal of the
+          battery to the bulb. And the bottom black line - or wire - goes from
+          the bulb back to the negative terminal of the battery.
+        </p>
+        <p>
           Electricity flows in a loop (in the direction of the arrows shown)
-          from the battery (our power source) to the load (the light bulb in
-          this case) and then back into the battery.
+          from the power source to the load and then back. Because this circuit
+          is a complete, unbroken loop, we call it a{' '}
+          <strong>closed circuit</strong>.
         </p>
         <p>
-          If there is a break in the loop, (an open circuit), the circuit is
-          incomplete and no electricity will flow. It's like a conveyor belt -
-          the entirety of it must be intact, otherwise it won't work properly.
+          If there is a break in the loop, the circuit is incomplete and no
+          electricity will flow. We call that an <strong>open circuit</strong>.
+          You can think of a circuit as a conveyor belt for electricity - the
+          whole loop has to be connected and intact, otherwise it won't work
+          properly.
         </p>
         <p>
-          Note that the direction shown in the image above is 'conventional
-          current', which assumes that power flows from the positive to
-          negative. The reverse is called "electron current", which actually
-          describes the flow of electrons (a more realistic model.){' '}
+          Note that the direction of the arrows in our circuit diagram shows the
+          <strong>conventional current</strong>, which assumes that power flows
+          from the positive battery terminal to the negative battery terminal.
+          The reverse direction is called <strong>electron current</strong>,
+          which is a more realistic model of the actual flow of electrons. But,
+          for the sake of this project, we don't need to get deep into the
+          physics of electricity.
         </p>
         <h2>We have a light!</h2>
         <p>
-          If you were to build the circuit above, you would see the light turn
-          on! Of course, like building anything, there are a couple of
-          'parameters' (values) we can tweak with this circuit. The things we
-          care about are Voltage & Amperage.
+          If you were to build a circuit based on the diagram above, you would
+          see the light turn on! And there are a couple of{' '}
+          <strong>parameters</strong> that you can adjust when you build any
+          circuit. For this project, the things we care about the most are
+          <strong>voltage</strong> and <strong>amperage</strong>.
         </p>
         <h3>Voltage</h3>
         <p>
-          Voltage is (electric) potential difference. This is the difference in
-          electric potential between two points. The units for this is Volts
-          (symbol V). The higher the voltage, the more energy is in the circuit.
+          Voltage is the difference in electric potential between two points in
+          a circuit. A higher voltage means there's more energy in the circuit.
+          The units for voltage are <strong>Volts</strong> (with the symbol{' '}
+          <strong>V</strong>).
         </p>
         <p>
-          Let's use a water analogy: think of voltage as the pressure of water
-          in a pipe. The higher the pressure, the more water can flow through
-          the pipe.
+          Because electricity can be tricky to visualize, let's use a water
+          analogy. Think of voltage as the pressure of water in a pipe. Higher
+          water pressure means that water can flow through the pipe faster. But
+          the size of the pipe stays the same!
         </p>
         <GuideImage
           src="/images/guide/guide-graphics_voltage.png"
@@ -88,32 +100,34 @@ const Page = ({ data }: any) => {
         />
         <h3>Amperage</h3>
         <p>
-          Amperage is The amount of current flowing through a circuit. The units
-          for this is Amperes (shortened as amps, with the symbol A).
+          Amperage is the amount of current flowing through a circuit. A higher
+          amperage means there's more electrons flowing through the circuit. The
+          units for amperage are <strong>Amperes</strong> (shortened as{' '}
+          <strong>amps</strong>, with the symbol <strong>A</strong>).
         </p>
         <p>
-          Think of amperage as the size of the diameter of the pipe. The larger
-          the diameter, the more water can flow through it at once. It's
-          important to note here that you can have a very large diameter pipe,
-          but the water is very still. This is the same as having a high
-          amperage but low voltage.
+          Using the same water analogy, think of amperage as the size of the
+          pipe. A larger diameter means that more water can flow through it at
+          once. It's important to note here that you can have a very large
+          diameter pipe with very still water, which is the same as having a
+          high amperage but low voltage.
         </p>
         <GuideImage
           src="/images/guide/guide-graphics_amperage.png"
           size="MEDIUM"
         />
         <p>
-          Understanding these{' '}
+          Understanding these basic units of electricity can help you start
+          building intuition for electric circuits. We won't be going into the
+          math in this guide, but we recommend extra reading, such as{' '}
           <a
             href="https://science.howstuffworks.com/environmental/energy/question501.htm"
             target="_BLANK"
           >
-            basic units in electricity
-          </a>{' '}
-          and a couple of basic equations can help you build the starter
-          intuition for understanding the relations between these different
-          properties. We won't be going into the math here, but we recommend the
-          extra reading if you're interested.
+            this article
+          </a>
+          , if you're interested in learning more about these parameters and
+          their relationships.
         </p>
         <PageNavigationButtons />
       </div>

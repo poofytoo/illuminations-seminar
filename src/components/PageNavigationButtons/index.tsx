@@ -16,7 +16,8 @@ const PageNavigationButtons = () => {
   let previousPage;
   const pageId = navigationLinks
     .map((link, key) => link.href)
-    .indexOf(activePage.split('/chapter')[1]);
+    .indexOf(activePage);
+
   let searchId = pageId;
   if (pageId !== -1) {
     while (!nextPage?.href && searchId < navigationLinks.length) {
@@ -33,14 +34,14 @@ const PageNavigationButtons = () => {
   return (
     <div className={styles.navigation}>
       {searchId > 0 && previousPage ? (
-        <a href={`/chapter/${previousPage.href}`} className={styles.previous}>
+        <a href={`${previousPage.href}`} className={styles.previous}>
           {previousPage.title}
         </a>
       ) : (
         <div />
       )}
       {nextPage ? (
-        <a href={`/chapter/${nextPage.href}`} className={styles.next}>
+        <a href={`${nextPage.href}`} className={styles.next}>
           {nextPage.title}
         </a>
       ) : (

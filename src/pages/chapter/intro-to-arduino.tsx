@@ -38,32 +38,32 @@ const Page = ({ data }: any) => {
     <div className={styles.appWrapper}>
       <Sidebar />
       <div className={styles.guideContent}>
-        <h1>Intro to Arduino!</h1>
+        <h1>Introduction to Arduino!</h1>
         <div className={styles.author}>
           By <a href="http://instagram.com/poofytoo">Victor Hung</a>
         </div>
         <div className={styles.learningGoals}>
           <h3>Goals of This Chapter</h3>
           <ul>
-            <li>Be introduced to the notion of microcontrollers</li>
+            <li>Obtain a basic understanding of microcontrollers</li>
             <li>Download the Arduino code editing software</li>
           </ul>
         </div>
         <h2>What is a Microcontroller?</h2>
         <p>
-          In the previous chapter, we showed a basic circuit which allows a
-          light bulb to turn on. If we want to do anything like those
-          Illumination lights, we'll have to learn how to turn them
-          on/off/change colors/etc. programmatically. Being able to control them
-          programmatically means we'll need a small computer, running some sort
-          of software, to change the output values so we can vary the amount of
-          power we deliver to the light.
+          The MIT Illuminations display is made up of hundreds of lights that
+          need to be turned on, turned off, and have their colors adjusted.
+          We'll want to control these lights programmatically, which means we'll
+          need a small computer, running some sort of software, to vary the
+          amount of power we deliver to each light.
         </p>
         <p>
-          This is where a microcontroller comes in! A microcontroller is a small
-          computer that has output pins that can be controlled by software (that
-          you upload), and input pins that can be read and analyzed (by your
-          code).
+          This is where a <strong>microcontroller</strong> comes in! A
+          microcontroller is a small computer that has both input and output
+          pins that can be controlled by software that you upload. So, for
+          example, you can use code to analyze any information coming into the
+          microcontroller or change the output power enough to, say, turn on and
+          off a light.
         </p>
         <GuideImage
           src="/images/guide/arduino.jpeg"
@@ -71,10 +71,9 @@ const Page = ({ data }: any) => {
           caption="The Arduino Uno!"
         />
         <p>
-          We're going to focus on one specific flavor of the microcontroller
-          called the <strong>Arduino Uno</strong>. This is an extremely popular
-          microcontroller designed for beginners and experienced prototypers
-          alike, and is super popular in the maker community. You can{' '}
+          For this project, we're going to use the Arduino Uno. This is an
+          extremely popular microcontroller designed for beginners and
+          experienced prototypers alike in the maker community. You can. You can{' '}
           <a href="https://docs.arduino.cc/hardware/uno-rev3" target="_blank">
             learn more about it here!
           </a>
@@ -82,11 +81,11 @@ const Page = ({ data }: any) => {
         <p>
           Arduino also has a very extensive{' '}
           <a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino">
-            Getting Started guide
+            Getting Started guide,
           </a>{' '}
-          which explains a lot of the principles in detail. The guide is
-          lengthy, but we recommend taking a quick look and then keeping it at
-          hand for quick reference later if you have questions!
+          which explains a lot of the principles of using microcontrollers in
+          detail. The guide is lengthy, but we recommend taking a quick look and
+          then keeping it at hand if you have questions later on!
         </p>
         <GuideImage
           src="/images/guide/arduino-in-action.jpg"
@@ -95,8 +94,8 @@ const Page = ({ data }: any) => {
         />
         <h2 id="components">Following Along</h2>
         <p>
-          At this point in the learning guide, there are a couple of components
-          we recommend you obtain if you'd like to follow along.
+          There are a couple of components we recommend you obtain if you'd like
+          to follow along with this guide and build your own blinky lights.
         </p>
         <div className={styles.tableContainer}>
           <table className={styles.dataTable}>
@@ -137,39 +136,41 @@ const Page = ({ data }: any) => {
           </p>
           <h2>The Arduino IDE</h2>
           <p>
-            We'll be using an Arduino "Integrated Development Environment"
-            (IDE). An IDE is a program made for editing code files. Although
-            code files are text files and could be edited in a text-editing
-            program, an IDE usually includes many features that help make
-            programming easier. The Arduino IDE not only lets us write and edit
-            programs for the Arduino microcontrollers, it also helps us to
-            upload the programs to the Arduino microcontrollers.
+            To write, edit, and upload software to our microcontroller, we'll be
+            using an Arduino <strong>Integrated Development Environment</strong>
+            , or <strong>IDE</strong>. An IDE is a program made for editing code
+            files.{' '}
           </p>
           <p>
-            There are two versions of the Arduino IDE: a web-based Arduino Web
-            Editor and a desktop version of the Arduino IDE for Windows or Mac
-            OS. We strongly recommend that you use the desktop version instead
-            of the web version, since the board driver management is all
-            contained within the desktop software. If you choose to use the
+            Although code files are text files and could be edited in a
+            text-editing program, an IDE usually includes many features that
+            help make programming easier. The Arduino IDE will specifically help
+            us write and upload code to Arduino microcontrollers, like the Uno.
+          </p>
+          <p>
+            There are two versions of the Arduino IDE: a web-based version and a
+            desktop version for Windows or Mac OS. We strongly recommend that
+            you use the desktop version, since the board driver management is
+            all contained within the desktop software. If you choose to use the
             web-based version, you will also need to use a separate plugin to
             manage the connection between the microcontroller and your computer.
             The plugin is sometimes a bit flaky.
           </p>
           <p>
             <a href="https://www.arduino.cc/en/software">
-              Download the Arduino IDE here!
+              Download the desktop version of the Arduino IDE here!
             </a>
           </p>
           <p>
-            If you're looking for a bit of help downloading the IDE and getting
-            started, you can take a look at{' '}
+            If you're looking for a bit more help downloading the IDE and
+            getting started, you can take a look at{' '}
             <a
               href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing"
               target="_blank"
             >
-              this guide here
+              this guide
             </a>
-            !
+            .
           </p>
           <PageNavigationButtons />
         </div>

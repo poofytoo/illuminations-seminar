@@ -9,6 +9,7 @@ import Sidebar from '../../components/Sidebar';
 
 import styles from '../../styles/Guide.module.scss';
 import PageNavigationButtons from '../../components/PageNavigationButtons';
+import Link from 'next/link';
 
 const arduinoCode = `#include <FastLED.h>
 
@@ -79,128 +80,154 @@ const Page = ({ data }: any) => {
           <h3>Goals of This Chapter</h3>
           <ul>
             <li>
-              Understand the idea behind individually addressable LED strips
+              Obtain a basic understanding of individually addressable LED
+              strips
             </li>
-            <li>Light up the WS2812b LED strips using the Arduino</li>
+            <li>Use the Arduino to light up the WS2812b LED strip</li>
           </ul>
         </div>
-        <h2>Overview</h2>
+        <h2>What are WS2812b LED strips?</h2>
         <p>
-          In the previous chapter, we learned how to control a single LED. Let's
-          scale this up now and see if we're able to control a whole lot of LEDs
-          using our Arduino and a special strip of LEDs (WS2812b) - the next
-          step in trying to produce Illuminations at home!
+          In order to make MIT Illuminations-style lights at home, we need to
+          scale up from programmatically controlling one LED to a lot at once!{' '}
+          <strong>WS2812b LED strips</strong> are very popular among the maker
+          community because of their versatility and ease-of-use.
         </p>
         <p>
           These LEDs are very popular among the maker community, and because of
           their versatility and ease-of-use, a lot of similar flavors can be
           found in art/lighting-related installations.
         </p>
-        <GuideImage src="/images/guide/ws2812b.png" />
+        <GuideImage
+          src="/images/guide/ws2812b.png"
+          caption="One 10 feet (3 meters) long WS2812b LED strip, coiled up"
+        />
         <p>
-          Before we dive into the WS2812b LED strips, it's important to
-          understand that there are a variety of different kinds of LED strips.
-          The three primary properties that make this one stand out over others
-          are: <strong>RGB</strong>, <strong>5v</strong>, and{' '}
-          <strong>individually addressable.</strong> We'll break each property
-          down.
+          There are three primary properties that make the LEDs in WS2812b
+          strips stand out over other options: RGB, 5V, and individually
+          addressable.
         </p>
         <h3>RGB LEDs</h3>
         <p>
-          These are RGB LEDs, meaning each LED is actually a combination of
-          three tiny LEDs - one that is red, one that is green, and one that is
-          blue (hence the RGB). These are great because, compared to a single
-          white LED, different values of each color can be turned on (i.e. red
-          at full bright, green at half bright, and blue off) in order to
-          produce millions of different colors.
+          WS2812b strips contain <strong>RGB LEDs</strong>, meaning each LED is
+          actually a combination of three even tinier LEDs - one that is Red,
+          one that is Green, and one that is Blue (hence the RGB). These are
+          great because each color can be turned on to a different brightness
+          level (i.e. red at full bright, green at half bright, and blue off) in
+          order to produce millions of different colors.
         </p>
         <p>
-          It's also important to understand that there are RGBW LEDs, which
-          include a <strong>white</strong> channel. This white channel is
-          sometimes used to just give a bit more pure of a white color, or to
-          give it a bit more brightness.
+          There are lots of other kinds of LEDs, like <strong>RGBW LEDs</strong>
+          , which include a white channel. This white channel can help the LED
+          emit a more pure white color, or give the LED a bit more brightness in
+          general.
         </p>
         <h3>5V LEDs</h3>
         <p>
-          We're choosing something that is 5V because 5V is a number that works
-          well with the Arduino. By default, the output of an Arduino on the
-          digital pins is 5V, which means we can directly plug the data line of
-          our LED strip (to be explained later) into the digital pin out in
-          order to control them.
+          The 5V LEDs in the WS2812b strips work well with the Arduino Uno we're
+          using for our projects. By default, the output of an Arduino's digital
+          pins is 5V, which means we can directly plug in the data line of our
+          LED strip (to be explained later).
         </p>
         <p>
-          There are other types of LEDs which take in other voltages - the most
-          common being 12V. While the 12V tends to be more durable and brighter,
-          they require additional components to be able to work with our
-          Arduinos.
+          The most common type of LED takes 12V power, but there are plenty of
+          others too. While the 12V tends to be more durable and brighter, they
+          require additional components to be able to work with our Arduinos.
         </p>
         <h3>Individually Addressable</h3>
         <p>
-          This LED strip is special because you only need three connections to
-          be able to produce millions of different colors. The pins are: Power
-          (5v), Data In (DI) and Ground (0V). With these three pins connected to
-          the Arduino, you're able to set the brightness and color on each LED
-          in the strand independent to each other! This is because the Arduino
-          sends more than just an 'on' or an 'off' to the LED strip - rather,
-          the Arduino communicates with a protocol (WS2812b) to a chip inside
-          each LED, which in turn communicates to the next chip down in the line
-          and so on and so on.{' '}
+          The WS2812b strip has three connections, also known as pins: Power
+          <span className={styles.pin}>5V</span>, Data In{' '}
+          <span className={styles.pin}>Din</span>, and Ground{' '}
+          <span className={styles.pin}>0V</span>. With these three pins
+          connected to an Arduino, you're able to set the brightness and color
+          on each individual LED in the strand! This is why we say it's
+          “individually addressable” - you can control each LED independently.
         </p>
-        <h2>The Datasheet</h2>
         <p>
-          Most electrical components come with an important document of
-          information that describes it's properties, operating characteristics,
-          and other important detail. This is usually called a data sheet! The
-          WS2812b's{' '}
+          This is because the Arduino sends more than just an 'on' or an 'off'
+          signal to the LED strip. Instead, the Arduino uses a protocol
+          (WS2812b) to communicate to a chip inside the first LED, which in turn
+          communicates to the next LED down in the line, and so on.
+        </p>
+        <h2>The WS2812b Data Sheet</h2>
+        <p>
+          Most electrical components come with an important document that
+          describes their properties, operating characteristics, and other
+          important details. This is usually called a{' '}
+          <strong>data sheet</strong>! The WS2812b's{' '}
           <a
             href="https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
             target="_blank"
           >
             data sheet
           </a>{' '}
-          probably contains more information than you need right now for this
-          guide, but it's good to always have it around so you can reference it
-          if you need to.
+          probably contains more information than you need right now, but it's
+          good to have it around for reference.
         </p>
         <h2>Connecting the WS2812b LED Strip</h2>
-        <p>Time to connect it to your Arduino!</p>
+        <p>
+          Now that we know what we're working with, it's time to connect the LED
+          strip to your Arduino! Take a look at this diagram to see how we're
+          going to connect everything:
+        </p>
         <GuideImage
           size="LARGE"
           src="/images/guide/ws2812b-wiring-diagram.png"
+          caption="Wiring diagram for the WS2812b LED strip"
         />
         <p>
-          Take a look at the diagram and take a look at the copper pads of the
-          LED strip. There should be 3 connections you have to make. Once you've
-          identified them, wire them up to the corresponding pins on the
-          Arduino. A quick and easy way to do this is to put jumper wires
-          directly into the female connectors (these connectors are called '3pin
-          JST-SM' connectors), and the other end can go directly into the
-          Arduino.
+          We'll have to make 3 connections between the Arduino Uno pins and the
+          copper pads at the end of the LED strip. A quick and easy way to do
+          this is to put one end of a wire directly into the '3pin JST-SM'
+          connectors on the copper pads, and the other end directly into the
+          Arduino pin. Like we mentioned in{' '}
+          <Link href="/chapter/blink">
+            Chapter 4 when we wired up a breadboard
+          </Link>
+          , it's good practice to use red wire for the 5V power supply and black
+          wire for the 0V ground (labeled{' '}
+          <span className={styles.pin}>GND</span>) - if those colors are
+          available.
+        </p>
+
+        <GuideImage
+          size="LARGE"
+          src="/images/guide/ws2812b-arduino.png"
+          caption="A photo of what your end result might look like, after you've made the 3 connections"
+        />
+        <p>
+          You'll also notice that there are these copper pads after every LED on
+          the strip, so you can cut it to whatever length you want! You could
+          also extend it by soldering multiple strands together, but there is a
+          limit to how many LEDs you can power and control at once - so just
+          keep an eye out if things start misbehaving.
         </p>
         <p>
           Other wiring diagrams online for similar LEDs might have you put a
-          resistor in between Pin 6 of the Arduino and the Din of the LED strip.
-          This is meant to help mitigate noise and bad signals - usually not
-          necessary for shorter strands.
+          resistor in between <span className={styles.pin}>PIN 6</span> of the
+          Arduino and the <span className={styles.pin}>Din</span> of the LED
+          strip, instead of a direct wire like we show here. This added resistor
+          is meant to help mitigate noise and bad signals, but it's usually not
+          necessary for shorter strands like the one we recommend for this
+          project. You may need one if you choose to extend your strip though!
         </p>
         <p>
-          The <strong>direction does matter</strong> on these LED strips. Your
-          strips may come with an arrow which indicate direction of data flow.
-          More importantly, you should make sure you distinguish (on your strip)
-          between Data In (Di or Din) and Data Out (Do or Dout)
-        </p>
-        <p>
-          You'll also notice that on the LED strip, there are these copper pads
-          after every LED. This is such that you can cut it to a desired length!
-          Of course, if you wanted to extend it, you can also solder multiple
-          strands together. There is a limit to how many LEDs you can power and
-          control at once though - so just keep an eye out if things start
-          misbehaving.
+          Lastly, just like how the polarity of a single LED matters, the
+          polarity/direction does matter on these LED strips too. The WS2812b
+          LED strip only has a Data In (<span className={styles.pin}>Din</span>)
+          pin to keep things simple, but other strips may come with an arrow
+          that indicates the direction of data flow. If that's the case, you
+          should make sure you distinguish between Data In (
+          <span className={styles.pin}>Di</span> or{' '}
+          <span className={styles.pin}>Din</span>) and Data Out (
+          <span className={styles.pin}>Do</span> or{' '}
+          <span className={styles.pin}>Dout</span>) on your strip.
         </p>
         <h2>Upload a Program!</h2>
         <p>
-          To communicate with these LED lights, we're going to use a library
-          called{' '}
+          To communicate with our newly wired LED lights, we're going to use a
+          library called{' '}
           <a href="https://fastled.io/" target="_blank">
             FastLED
           </a>
@@ -210,27 +237,37 @@ const Page = ({ data }: any) => {
           your own projects.
         </p>
         <p>
-          One way to add a library is to install one using Arduino's built in{' '}
+          One way to add a library is to install it using Arduino's built-in{' '}
           <strong>Library Manager</strong>. Open Arduino IDE and then go to{' '}
           <code>Sketch &gt; Include Library &gt; Manage Libraries</code>. Search
           for <strong>FastLED</strong> and then click <strong>Install</strong>.
         </p>
         <p>
-          Next, let's open up an example sketch and try making our lights change
-          colors. Go to <code>File &gt; Examples &gt; FastLED &gt; Cylon</code>
+          Next, let's open up an example sketch (which is what Arduino calls
+          code files) and try making our lights change colors. Go to{' '}
+          <code>File &gt; Examples &gt; FastLED &gt; Cylon</code>
         </p>
         <p>
           When you open up the code, take a quick read through it. You'll notice
-          there are 2 variables that are relevant to us. <code>NUM_LEDS</code>{' '}
-          is the number of LEDs in your strip - you may have more than what
-          we're able to power. Set that to a low number like 24. The second
-          variable is <code>DATA_PIN</code>, which is set to 2. Change that to 6
-          (since you're using pin 6 on the Arduino).
+          there are 2 variables that are relevant to us:
         </p>
-        <p>
-          You can leave <code>CLOCK_PIN</code> untouched since we're not using
-          that anyway. The code you end up with should look something like this:
-        </p>
+        <ul>
+          <li>
+            <code>NUM_LEDS</code> is the number of LEDs in your strip - you may
+            have more than what we're able to power with our 5V Arduino output.
+            Set that to a low number like 24.
+          </li>
+          <li>
+            <code>DATA_PIN</code> is whatever pin you've connected the Din of
+            the LED strip to on the Arduino. It's initially set to 2, but you'll
+            want to change it to 6 (since we're using pin 6 on the Arduino).
+          </li>
+          <li>
+            Note that you can leave <code>CLOCK_PIN</code> untouched, since
+            we're not using it.{' '}
+          </li>
+        </ul>
+        <p>The code you end up with should look something like this:</p>
         <Editor
           value={arduinoCode}
           onValueChange={() => {}}
@@ -249,9 +286,10 @@ const Page = ({ data }: any) => {
           this far. You deserve it!
         </p>
         <p>
-          Play around with different examples and take a look at the code.
-          There's a great tutorial on Instructables which explains the world of
-          the FastLED library, which you can{' '}
+          After you have your LEDs working, you can play around with different
+          parameters and take a closer look at the code. There's a great
+          tutorial on Instructables which explains the world of the FastLED
+          library, which you can{' '}
           <a
             href="https://www.instructables.com/Basic-of-FastLED/"
             target="_blank"
@@ -259,6 +297,26 @@ const Page = ({ data }: any) => {
             find here
           </a>
           .
+        </p>
+        <h2>Troubleshooting</h2>
+        <p>
+          If something doesn't work like how it's supposed to, start by seeing
+          if there are any errors in the Arduino IDE console output. Make sure
+          you have the board and the port selected correctly - if you don't
+          remember how to do this, check out{' '}
+          <a
+            href="https://support.arduino.cc/hc/en-us/articles/4733418441116-Upload-a-sketch-in-Arduino-IDE"
+            target="_blank"
+          >
+            Arduino's Guide
+          </a>
+          .
+        </p>
+        <p>
+          If everything is uploading correctly, but you're not seeing the LED
+          lights change colors, double check and make sure your wiring is
+          correct. Make sure the code is copy pasted correctly from above, and
+          that the variables are set correctly.
         </p>
         <PageNavigationButtons />
       </div>

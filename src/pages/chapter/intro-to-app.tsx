@@ -10,7 +10,7 @@ const Page = ({ data }: any) => {
     <div className={styles.appWrapper}>
       <Sidebar />
       <div className={styles.guideContent}>
-        <h1>Introduction to the Illuminations App</h1>
+        <h1>Introduction to the MIT Illuminations App</h1>
         <div className={styles.author}>
           By <a href="https://ceriley.com/">Ceri Riley</a>, Miguel Padilla, &{' '}
           <a href="http://instagram.com/poofytoo">Victor Hung</a>
@@ -18,70 +18,80 @@ const Page = ({ data }: any) => {
         <div className={styles.learningGoals}>
           <h3>Goals of This Chapter</h3>
           <ul>
-            <li>Download the Illuminations App</li>
-            <li>Create & Edit an Illuminations Light Show</li>
+            <li>Download the MIT Illuminations App</li>
+            <li>Create & Edit an MIT Illuminations Light Show</li>
           </ul>
         </div>
-        <h2>Overview</h2>
+        <h2>How do the MIT Welcome Center lights work?</h2>
         <p>
-          Let's shift gears a little bit and take a look back at the lights that
-          run in the MIT Welcome Center. There's a dedicated app that's built to
-          run the lights, and it's available for you to play with! While you
-          won't be able to directly control the live lights in the building,
-          there are ways you can use the app to create your own light shows and
-          share them.
+          MIT Illuminations has a dedicated app that's built to design and run
+          the lights, and it's available for you to play with! While you won't
+          be able to directly control the live lights in MIT Welcome Center
+          (unless you work directly with the Admissions office), you can use the
+          app to create your own light shows at home and share them.
         </p>
         <GuideImage
           src="/images/guide/illuminations-interior.jpg"
           size="LARGE"
+          caption="Come to building E38 on campus to see the MIT Welcome Center lights in action!"
         />
         <h2>Desktop Application</h2>
         <p>
-          The software that runs the Illumination lights is an{' '}
-          <a href="https://github.com/sosolimited/MIT-Illuminations">
-            open source application
+          The software that runs the MIT Illumination lights is an{' '}
+          <a
+            href="https://github.com/sosolimited/MIT-Illuminations"
+            target="_blank"
+          >
+            open-source application
           </a>{' '}
-          takes P5 code and visualizes/outputs it to various professional and
-          hobbyist lighting units, making creating light shows easy and
-          accessible.
+          that takes p5.js code (an open-source JavaScript library - we have{' '}
+          <Link href="/chapter/p5-js">a whole chapter</Link> on it in this
+          guide!) and outputs visualizations to various professional and
+          hobbyist lighting units. Basically, it makes creating fun light shows
+          easy and accessible.
         </p>
         <GuideImage
           border={false}
           size="LARGE"
           href="https://github.com/sosolimited/MIT-Illuminations"
           src="/images/guide/illuminations-splash.png"
+          caption="This is the splash screen of the MIT Illuminations app, and clicking this image will bring you to the open-source code repository!"
         />
         <div className="boxed-note">
           <h3>Note:</h3>
           <p>
             When downloading software from the internet, it's always good to
-            check twice how trustworthy the source is - in this case, both this
-            website giving you this information has the domain format of{' '}
-            <strong>*.mit.edu</strong>, which means it's genuine MIT content.
-            GitHub is a public platform for developers to share their code -
-            which means anyone can upload anything. The code we're providing you
-            with is safe but be careful out there. Only download and run code
-            that you trust!
+            double-check how trustworthy the source is. In this case, this
+            website has the domain format of *.mit.edu, which means it's genuine
+            MIT content. GitHub is a public platform for developers to share
+            their code, which means anyone can upload anything. The
+            MIT-Illuminations code we're linking to was uploaded by the{' '}
+            <a href="https://www.sosolimited.com/" target="_blank">
+              SOSO
+            </a>
+            team (an alumni-founded company who collaborated with MIT on this
+            project) and we promise it's safe. Be careful out there, and only
+            download and run code that you trust!
           </p>
         </div>
         <p>
-          Open source software like this normally have a README.md file that
-          contains information about how to run the application and
-          develop/contribute to it if you're so inclined. GitHub is a platform
-          that makes this contribution of code easy and accessible. When you
-          click the GitHub link, immediately you'll see all the source code that
-          was written by the SOSO team which builds the application. We won't
-          need to touch any of that in order to run the application - the code
-          has been compiled into a app that can run on your computer if you have
-          a Mac or a Windows computer.
+          Open-source software like this normally has a README.md file that
+          contains information about how to run the application and contribute
+          to it if you want. Think of this guide, learn.illuminations, as an
+          expanded or alternate version of the README file that goes into a
+          little more detail to help you set up your own light show.
         </p>
         <p>
-          Head to the download page here (opens in a new window):{' '}
+          We won't need to touch any of the source code in GitHub, because the
+          code has been compiled into the MIT Illuminations app, which can run
+          on a Mac or a Windows computer.
+        </p>
+        <p>
           <a
             target="_BLANK"
             href="https://github.com/sosolimited/MIT-Illuminations/releases"
           >
-            https://github.com/sosolimited/MIT-Illuminations/releases
+            You can download the app here.
           </a>
         </p>
         <h2>Overview of the App</h2>
@@ -91,10 +101,11 @@ const Page = ({ data }: any) => {
           src="/images/guide/illuminations-home.png"
         />
         <p>
-          By default, the main screen of the Illuminations app contains a
-          variety of different shows, along with the current show that's playing
-          (on the left, "playing now"). For starters, let's click into one of
-          these shows and take a look closer at the editing panel.
+          By default, the main screen of the MIT Illuminations app contains a
+          variety of different light shows, along with the current show that's
+          playing (on the left, labeled "Playing now"). For starters, let's
+          click into one of these shows and take a look closer at the editing
+          panel.
         </p>
         <GuideImage
           border={false}
@@ -102,26 +113,31 @@ const Page = ({ data }: any) => {
           src="/images/guide/app-overview.png"
         />
         <p>
-          The bulk of the screen shows the{' '}
+          The bulk of the screen is the{' '}
           <a href="https://p5js.org/" target="_blank">
             p5.js
           </a>{' '}
-          editor (1). That's the code running the lights! We'll go a little more
-          into p5.js in the <Link href="/chapter/p5-js">p5.js chapter</Link>{' '}
-          later, but one of the best ways to learn is to play around by changing
-          some values here and there to see if you can alter the behavior. The
-          color bar (2) is where the output of the code is rendered to and is
-          the 'canvas' that's being drawn on. To get the actual color the lights
-          show, the app samples colors from that canvas (3) and sends it to the
-          Illumination lights.
+          editor (1). That's the code running the light show! We have a whole{' '}
+          <Link href="/chapter/p5-js">p5.js chapter</Link> later in this guide,
+          but one of the best ways to learn is to play around, changing some
+          values here and there to see if you can alter the lights' behavior.
         </p>
-        <h2>How to Create/Edit a Show</h2>
         <p>
-          There are a variety of different template shows that can serve as a
-          base to create new shows. Click into one and then click the{' '}
-          <code>COPY TO NEW SHOW</code> button at the top of the screen to
-          create a new show entitles Copy of [Template name] where you can begin
-          experimenting with the settings.
+          The color bar (2) is where the output of the code is rendered. Think
+          of it as the 'canvas' that's being drawn on according to the code's
+          instructions. Then, the app samples colors from the pixels of that
+          canvas (3) and sends the output data to whatever LED lights are wired
+          up to the computer.
+        </p>
+        <h2>How to Create & Edit a Show</h2>
+        <p>
+          The MIT Illuminations app contains a variety of different template
+          shows (with their own partially unique code) that can serve as a base
+          to create new shows. Click into one of these templates and then click
+          the <code>COPY TO NEW SHOW</code> button at the top of the screen to
+          create a new show entitled Copy of [template name]. From there, you
+          can retitle it and begin experimenting with the settings to make your
+          own light show.
         </p>
         <GuideImage
           border={false}
@@ -131,11 +147,12 @@ const Page = ({ data }: any) => {
         <p>
           Depending on which show you copied, the <code>CONTROLS</code> section
           will give you some user-friendly interfaces to adjust variables within
-          the code, like the color (inputted as RGB/HEX) or speed (via a slider
-          bar) or the lights. You can change these and hit{' '}
-          <code>SAVE / PREVIEW</code> if you'd like to see the updated changes,
-          or hit <code>PUBLISH</code> if you'd like to set this to be the
-          current playing show.
+          the code, like the color (inputted as RGB/HEX) or speed (inputted via
+          a slider bar) of the lights. You can change these and click{' '}
+          <code>SAVE / PREVIEW</code> if you'd like to see the updated changes
+          on the 'canvas' at the top of the screen, or hit <code>PUBLISH</code>{' '}
+          if you'd like to set this to be the current playing show on whatever
+          lights you have connected.
         </p>
         <p>
           The <code>CODE</code> section will give you more granular control over
@@ -145,17 +162,16 @@ const Page = ({ data }: any) => {
           and light outputs.
         </p>
         <ul>
+          <li>As we've mentioned, all this code is written in p5.js.</li>
           <li>
-            The code is written in p5.js, which we'll talk about in a later
-            section.
+            The text beneath the title of each user-friendly interface in the{' '}
+            <code>CONTROLS</code> section tells you the relevant value that you
+            can look for in the <code>CODE</code> section (e.g.
+            <code>control.color1.value</code> or{' '}
+            <code>controls.scanSpeed.value</code>).
           </li>
           <li>
-            The text beneath the title of each control panel tells you the
-            relevant code value (e.g. control.color1.value or
-            controls.scanSpeed.value).
-          </li>
-          <li>
-            Click <code>RUN</code> to check your code animation, and the{' '}
+            Click <code>RUN</code> to check your code animation, and click the{' '}
             <code>CONSOLE</code> or <code>HELP</code> buttons if you need some
             assistance debugging.
           </li>

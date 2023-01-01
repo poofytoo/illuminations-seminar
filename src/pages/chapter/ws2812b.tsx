@@ -19,7 +19,7 @@ const arduinoCode = `#include <FastLED.h>
 // For led chips like Neopixels, which have a data line, ground, and power, you just
 // need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
 // ground, and power), like the LPD8806, define both DATA_PIN and CLOCK_PIN
-#define DATA_PIN 6
+#define DATA_PIN 4
 #define CLOCK_PIN 13
 
 // Define the array of leds
@@ -205,7 +205,7 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           Other wiring diagrams online for similar LEDs might have you put a
-          resistor in between <span className={styles.pin}>PIN 6</span> of the
+          resistor in between <span className={styles.pin}>PIN 4</span> of the
           Arduino and the <span className={styles.pin}>Din</span> of the LED
           strip, instead of a direct wire like we show here. This added resistor
           is meant to help mitigate noise and bad signals, but it's usually not
@@ -260,7 +260,7 @@ const Page = ({ data }: any) => {
           <li>
             <code>DATA_PIN</code> is whatever pin you've connected the Din of
             the LED strip to on the Arduino. It's initially set to 2, but you'll
-            want to change it to 6 (since we're using pin 6 on the Arduino).
+            want to change it to 4 (since we're using pin 4 on the Arduino).
           </li>
           <li>
             Note that you can leave <code>CLOCK_PIN</code> untouched, since

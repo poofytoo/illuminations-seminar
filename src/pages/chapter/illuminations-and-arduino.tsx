@@ -57,7 +57,7 @@ const Page = ({ data }: any) => {
             <span className={styles.pin}>5V</span> (best practice: red wire)
           </li>
           <li>
-            LED Strip Data <span className={styles.pin}>DI</span> - Arduino{' '}
+            LED Strip Data <span className={styles.pin}>Din</span> - Arduino{' '}
             <span className={styles.pin}>PIN 4</span>
           </li>
           <li>

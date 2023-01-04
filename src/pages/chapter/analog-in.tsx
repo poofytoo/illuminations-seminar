@@ -3,6 +3,8 @@ import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
 import PageNavigationButtons from '../../components/PageNavigationButtons';
 
+import cx from 'classnames';
+
 const Page = ({ data }: any) => {
   return (
     <div className={styles.appWrapper}>
@@ -16,10 +18,13 @@ const Page = ({ data }: any) => {
           <h3>Goals of This Chapter</h3>
           <ul>
             <li>Use the Analog In pin on the Arduino</li>
-            <li>Understand a simple variable resistor (the photoresistor)</li>
+            <li>
+              Obtain a basic understanding of a simple variable resistor (the
+              photoresistor)
+            </li>
           </ul>
         </div>
-        <h2>Introduction</h2>
+        <h2>Adding Interactivity</h2>
         <p>
           Having the LED strip change based on the environment is a great way to
           add interactivity to your project - an example of this is light
@@ -28,9 +33,10 @@ const Page = ({ data }: any) => {
         <p>
           The photoresistor (or photocell) is a special type of resistor that
           changes in resistance when light shines on it. When there is{' '}
-          <strong>more light</strong>, the resistance is lower. When there is
-          less light, the resistance is higher. The specific amount of
-          resistance depends on the specific component.{' '}
+          <strong>more light</strong>, the resistance is <strong>lower</strong>.
+          When there is <strong>less light</strong>, the resistance is{' '}
+          <strong>higher</strong>. The specific amount of resistance depends on
+          the specific component.{' '}
           <a
             href="https://www.instructables.com/Photoresistors/"
             target="_blank"
@@ -45,8 +51,10 @@ const Page = ({ data }: any) => {
           caption={"Hello! I'm a photoresistor!"}
         />
         <p>
-          Photoresistors are non-polarized (no notion of + or -), meaning you
-          can use it in either direction.
+          Photoresistors are non-polarized (no notion of{' '}
+          <span className={cx(styles.sign, styles.positive)}>+</span> or{' '}
+          <span className={cx(styles.sign, styles.negative)}>-</span>), meaning
+          you can use it in either direction.
         </p>
         <p>
           One way to use the photoresistor is to create a voltage divider where
@@ -59,9 +67,9 @@ const Page = ({ data }: any) => {
           size="SMALL"
         />
         <p>
-          The value (voltage) of A0 (also known as Analog Pin 0) is a fraction
-          of 5v. The voltage divider makes it such that the voltage at that
-          point is:
+          The value (voltage) of Analog Pin 0{' '}
+          <span className={styles.pin}>A0</span> is a fraction of 5 Volts. The
+          voltage divider makes it such that the voltage at that point is:
         </p>
         <p className={styles.center}>
           <span className={styles.equation}>
@@ -116,8 +124,9 @@ const Page = ({ data }: any) => {
           size="MEDIUM"
         />
         <p>
-          If you're unfamiliar with circuits, try to wire the above schematic
-          without looking at the photo of the example wiring below. Practice!
+          If you're unfamiliar with circuits, use this opportunity to see if you
+          can wire the above schematic without looking at the photo of the
+          example wiring below. Practice!
         </p>
         <GuideImage src="/images/guide/wiring-photoresistor.jpg" size="LARGE" />
         <p>
@@ -127,8 +136,9 @@ const Page = ({ data }: any) => {
         <p>Take a moment to read through the code.</p>
         <p>
           Notice that in the code there are values for <code>light</code> and{' '}
-          <code>dark</code>. we know sensorValue (the analogRead value) is going
-          to be some range - let's find this range, and then map it from 0 to 1.
+          <code>dark</code>. we know <code>sensorValue</code> (the analogRead
+          value) is going to be some range - let's find this range, and then map
+          it from 0 to 1.
         </p>
         <p>
           Instead of doing <code>Serial.println(value)</code> statement, print

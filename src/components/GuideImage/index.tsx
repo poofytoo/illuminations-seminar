@@ -31,7 +31,7 @@ const GuideImage = ({
               [styles.hideBorder]: border === false,
             })}
             src={src}
-            alt={alt}
+            alt={alt ? alt : caption ? caption : `Image`}
           />
           {caption && <span className={styles.caption}>{caption}</span>}
         </a>

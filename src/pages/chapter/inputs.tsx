@@ -10,6 +10,9 @@ const Page = ({ data }: any) => {
       <div className={styles.guideContent}>
         <h1>Buttons & Inputs</h1>
         <h2>Coming Soon!</h2>
+        <p>
+          https://www.theengineeringprojects.com/2017/01/use-digitalread-arduino.html
+        </p>
         <PageNavigationButtons />
       </div>
     </div>

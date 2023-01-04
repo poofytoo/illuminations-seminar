@@ -30,9 +30,9 @@ export const navigationLinks = [
     href: '/chapter/ws2812b',
     type: ['arduino'],
   },
-  { heading: 'The Illuminations App' },
+  { heading: 'The MIT Illuminations App' },
   {
-    title: 'Illuminations App',
+    title: 'The App',
     href: '/chapter/intro-to-app',
     type: ['app'],
   },
@@ -68,6 +68,11 @@ export const navigationLinks = [
     title: 'MBTA API',
     href: '/chapter/mbta-api',
     type: ['app'],
+  },
+  { heading: 'Extras' },
+  {
+    title: 'Example Projects',
+    href: '/chapter/example-projects',
   },
 ];
 

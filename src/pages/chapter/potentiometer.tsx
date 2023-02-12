@@ -1,5 +1,3 @@
-import Link from 'next/link';
-// import GuideImage from '../../components/GuideImage';
 import Sidebar from '../../components/Sidebar';
 
 import { google } from 'googleapis';

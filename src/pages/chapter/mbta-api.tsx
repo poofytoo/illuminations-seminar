@@ -99,6 +99,7 @@ function draw() {
           particularly illuminating - you can think about it like this: an API
           is a way for two different programs to communicate with each other.
         </p>
+        <p>More information on this will be posted shortly!</p>
         <h2>Working with APIs</h2>
         <p>
           Below is example of how to use the MBTA API. We recommend using the{' '}

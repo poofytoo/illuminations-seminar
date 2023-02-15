@@ -9,6 +9,7 @@ const Page = ({ data }: any) => {
       <div className={styles.guideContent}>
         <h1>P5.js</h1>
         <h2>Coming Soon!</h2>
+        <p>More information on this will be posted shortly.</p>
       </div>
     </div>
   );

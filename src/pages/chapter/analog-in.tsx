@@ -146,15 +146,15 @@ const Page = ({ data }: any) => {
         <p>
           Our equation <span className={styles.pin}>A0</span> = 5V &times;
           (Regular ol' Resistor)/(Photoresistor + Regular ol' Resistor) becomes{' '}
-          <span className={styles.pin}>A0</span> = 5V &times; 10kΩ/20kΩ. So{' '}
-          <span className={styles.pin}>A0</span> is exactly half of 5V, which is
-          2.5V.
+          <span className={styles.pin}>A0</span> = 5V &times;
+          10k&#937;/20k&#937;. So <span className={styles.pin}>A0</span> is
+          exactly half of 5V, which is 2.5V.
         </p>
         <p>
           When the photoresistor is in darkness, the resistance is very large
-          100kΩ, while the Regular ol' Resistor stays the same. Intuitively, we
-          can see that the ratio is roughly 10:1 between the top resistance and
-          the bottom resistance, which pushes{' '}
+          100k&#937;, while the Regular ol' Resistor stays the same.
+          Intuitively, we can see that the ratio is roughly 10:1 between the top
+          resistance and the bottom resistance, which pushes{' '}
           <span className={styles.pin}>A0</span> in value much closer to ground
           (0V).
         </p>
@@ -162,8 +162,9 @@ const Page = ({ data }: any) => {
         <p>
           If we do the math, <span className={styles.pin}>A0</span> = 5V &times;
           (Regular ol' Resistor)/(Photoresistor + Regular ol' Resistor) becomes{' '}
-          <span className={styles.pin}>A0</span> = 5V &times; 10kΩ/110kΩ. So{' '}
-          <span className={styles.pin}>A0</span> is 0.5V
+          <span className={styles.pin}>A0</span> = 5V &times;
+          10k&#937;/110k&#937;. So <span className={styles.pin}>A0</span> is
+          0.5V
         </p>
         <p>
           The values of our photoresistor in practice may not be exactly this,
@@ -174,7 +175,7 @@ const Page = ({ data }: any) => {
         <h2>Let's wire it up!</h2>
         <p>
           To wire this up, we'll follow the circuit diagram below and use a
-          breadboard, a photoresistor, a 10kΩ regular ol' resistor, and our
+          breadboard, a photoresistor, a 10k&#937; regular ol' resistor, and our
           trusty Arduino Uno. Specifically, we'll want to use 3 pins on the
           Arduino:
         </p>

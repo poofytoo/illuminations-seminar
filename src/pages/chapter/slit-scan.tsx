@@ -119,10 +119,10 @@ const Page = ({ data }: any) => {
           </li>
           <li>
             For images with a rainbow of vibrant colors, you'll want to pay
-            extra attention to the SCAN SPEED setting. A Rainbow template
-            exists, and it's easy to accidentally create a more chaotic or less
-            intentional-looking version of that show with a busy Slit-Scan
-            photo.
+            extra attention to the <code>SCAN SPEED</code> setting. A Rainbow
+            template exists, and it's easy to accidentally create a more chaotic
+            or less intentional-looking version of that show with a busy
+            Slit-Scan photo.
           </li>
         </ul>
 
@@ -207,12 +207,12 @@ const Page = ({ data }: any) => {
         </p>
 
         <p>
-          You could modify the CODE of the template to make it scan up-and-down
-          instead of on a loop. But if you want to avoid doing that and have a
-          seamless light show, you can just make sure that the image you upload
-          contains a horizontal line of symmetry. There are plenty of free photo
-          editors out there that can help you achieve this "movie magic," such
-          as <a href="https://pixlr.com/">Pixlr</a> or{' '}
+          You could modify the <code>CODE</code> of the template to make it scan
+          up-and-down instead of on a loop. But if you want to avoid doing that
+          and have a seamless light show, you can just make sure that the image
+          you upload contains a horizontal line of symmetry. There are plenty of
+          free photo editors out there that can help you achieve this "movie
+          magic," such as <a href="https://pixlr.com/">Pixlr</a> or{' '}
           <a href="https://www.gimp.org/">GIMP</a>.
         </p>
 

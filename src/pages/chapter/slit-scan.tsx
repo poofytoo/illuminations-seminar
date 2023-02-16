@@ -1,3 +1,4 @@
+import PageNavigationButtons from '../../components/PageNavigationButtons';
 import Sidebar from '../../components/Sidebar';
 import styles from '../../styles/Guide.module.scss';
 
@@ -14,12 +15,15 @@ const Page = ({ data }: any) => {
             https://learn.illuminations.mit.edu/chapter/slit-scan
           </a>
         </p>
-        <h3>GOALS OF THIS CHAPTER</h3>
 
-        <ul>
-          <li>Obtain a basic understanding of slit-scan photography</li>
-          <li>Learn some best practices for using the Slit-Scan template</li>
-        </ul>
+        <div className={styles.learningGoals}>
+          <h3>GOALS OF THIS CHAPTER</h3>
+
+          <ul>
+            <li>Obtain a basic understanding of slit-scan photography</li>
+            <li>Learn some best practices for using the Slit-Scan template</li>
+          </ul>
+        </div>
 
         <h2>What is the Slit-Scan template?</h2>
         <p>
@@ -218,6 +222,7 @@ const Page = ({ data }: any) => {
           transitions from the last row of pixels to the first again. Image
           credit: Harold "Doc" Edgerton/MIT
         </p>
+        <PageNavigationButtons />
       </div>
     </div>
   );

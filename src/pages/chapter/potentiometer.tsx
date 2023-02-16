@@ -56,7 +56,7 @@ const Page = ({ data }: any) => {
           size="LARGE"
         />
         <p>
-          Pins 1 and 3 are the ends of the resistor. When we say a 10kΩ
+          Pins 1 and 3 are the ends of the resistor. When we say a 10k&#937;
           potentiometer, we mean that the max resistance (between pins 1 and 3)
           is that value. In the case of this potentiometer, which has a knob, we
           can rotate the knob to create different resistances in between pins 1
@@ -74,8 +74,8 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           So if we rotate all the way counterclockwise, the resistance between 1
-          and 2 is very small (close to 0kΩ) and the resistance between 2 and 3
-          is close to the max value (10kΩ).
+          and 2 is very small (close to 0k&#937;) and the resistance between 2
+          and 3 is close to the max value (10k&#937;).
         </p>
         <p>
           The opposite is true if we rotate all the knob clockwise, towards pin

@@ -214,8 +214,8 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           Up until now, we've been dealing with digital inputs (just HIGH or
-          LOW). - with this <code>analogRead()</code> function, we can have much
-          higher fidelity sensing.
+          LOW). - with this <code>analogRead()</code> function, we can have a
+          much wider range of inputs.
         </p>
         <GuideImage
           src="/images/guide/illuminations-seminar-03.png"
@@ -231,8 +231,8 @@ const Page = ({ data }: any) => {
         <h2>Uploading Code & Calibrating the Photoresistor</h2>
         <p>
           In order to calibrate the photoresistor and use the{' '}
-          <code>analogRead()</code>
-          function, copy and paste the code below into your Arduino IDE.
+          <code>analogRead()</code> function, copy and paste the code below into
+          your Arduino IDE.
         </p>
         <p>
           Download the code{' '}
@@ -240,7 +240,7 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           Take a moment to read through the code. Notice that in the code there
-          are values for <code>dark</code> and <code>light</code>. The
+          are values for <code>dark</code> and <code>light</code>. The{' '}
           <code>sensorValue</code> (the <code>analogRead</code> value) is going
           to be some range depending on how the photoresistor senses the
           darkness and light in your room. So to calibrate the photoresistor,
@@ -255,20 +255,21 @@ const Page = ({ data }: any) => {
         </p>
         <ol>
           <li>
-            <code>The Serial.printIn(value)</code> statement isn't useful to us
-            for calibration. Instead, change it to Serial.printIn(sensorValue)
-            to print what <span className={styles.pin}>A0</span> is detecting,
-            which should be between 0 and 1024.
+            The <code>Serial.printIn(value)</code> statement isn't useful to us
+            for calibration. Instead, change it to{' '}
+            <code>Serial.printIn(sensorValue)</code> to print what{' '}
+            <span className={styles.pin}>A0</span> is detecting, which should be
+            between 0 and 1024.
           </li>
           <li>
             Cover the photoresistor completely so the resistance raises up to
             the maximum amount for your current setup. See what value the code
-            prints – that's your dark value!
+            prints - that's your dark value!
           </li>
           <li>
             Shine a bright light at the photoresistor so the resistance drops to
             the lowest amount for your current setup. See what value the code
-            prints – that's your light value!
+            prints - that's your light value!
           </li>
           <li>
             Change the float dark and float light values to the numbers you just
@@ -276,8 +277,8 @@ const Page = ({ data }: any) => {
           </li>
           <li>
             Change the <code>Serial.printIn()</code> line back to{' '}
-            <code>Serial.printIn(value)</code>
-            because your photoresistor is calibrated.
+            <code>Serial.printIn(value)</code> because your photoresistor is
+            calibrated.
           </li>
         </ol>
         <p>
@@ -314,7 +315,7 @@ const Page = ({ data }: any) => {
             <span className={styles.pin}>5V</span> (best practice: red wire)
           </li>
           <li>
-            LED Strip <span className={styles.pin}>DIn</span> - Arduino{' '}
+            LED Strip <span className={styles.pin}>Din</span> - Arduino{' '}
             <span className={styles.pin}>PIN 4</span>
           </li>
           <li>
@@ -331,8 +332,7 @@ const Page = ({ data }: any) => {
         </p>
         <GuideImage src="/images/guide/photoresistor-tryit.gif" size="LARGE" />
         <p>
-          If you're stuck, copy and paste the code [below/from this link] into
-          your Arduino IDE. Stuck? You can also download the code{' '}
+          You can also download the code{' '}
           <a href="/arduino/PhotoResistor/PhotoResistor.ino">here</a>.
         </p>
         <p>In the Arduino IDE sketch, you'll want to check on 3 variables:</p>

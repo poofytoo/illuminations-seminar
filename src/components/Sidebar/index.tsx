@@ -69,11 +69,6 @@ export const navigationLinks = [
     href: '/chapter/mbta-api',
     type: ['app'],
   },
-  { heading: 'Extras' },
-  {
-    title: 'Example Projects',
-    href: '/chapter/example-projects',
-  },
 ];
 
 const SidebarContent = () => {

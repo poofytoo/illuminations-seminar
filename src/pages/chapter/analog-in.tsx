@@ -45,10 +45,11 @@ const Page = ({ data }: any) => {
         </p>
 
         <p>
-          To do this, we'll use a component called the <b>photoresistor</b> (or{' '}
-          <b>photocell</b>). It's a type of resistor, which basically means it
-          can change how easily electricity can flow within a circuit. Using the
-          same “water in a pipe” metaphor as the{' '}
+          To do this, we'll use a component called the{' '}
+          <strong>photoresistor</strong> (or <strong>photocell</strong>). It's a
+          type of resistor, which basically means it can change how easily
+          electricity can flow within a circuit. Using the same “water in a
+          pipe” metaphor as the{' '}
           <a href="https://learn.illuminations.mit.edu/chapter/electronics">
             electronics chapter
           </a>
@@ -87,10 +88,10 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           One way to use a photoresistor in the circuit is to create a{' '}
-          <b>voltage divider</b>, which is where you use one or multiple
-          resistors to convert a larger voltage into a smaller one. What's great
-          is that you can calculate exactly how much you expect the voltage to
-          decrease at various points in the circuit.
+          <strong>voltage divider</strong>, which is where you use one or
+          multiple resistors to convert a larger voltage into a smaller one.
+          What's great is that you can calculate exactly how much you expect the
+          voltage to decrease at various points in the circuit.
         </p>
         <GuideImage
           src="/images/guide/illuminations-seminar-01.png"

@@ -8,24 +8,14 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>Using Slit-Scan to Make Light Shows</h1>
-
-        <p>
-          Preview:{' '}
-          <a href="https://learn.illuminations.mit.edu/chapter/slit-scan">
-            https://learn.illuminations.mit.edu/chapter/slit-scan
-          </a>
-        </p>
-
         <div className={styles.learningGoals}>
-          <h3>GOALS OF THIS CHAPTER</h3>
-
+          <h3>Goals of this Chapter</h3>
           <ul>
             <li>Obtain a basic understanding of slit-scan photography</li>
             <li>Learn some best practices for using the Slit-Scan template</li>
           </ul>
         </div>
-
-        <h2>What is the Slit-Scan template?</h2>
+        <h2>What is the Slit-Scan Template?</h2>
         <p>
           One of the original templates in the MIT Illuminations App is called
           "Slit-Scan," which might not be as intuitive as other names like
@@ -75,10 +65,7 @@ const Page = ({ data }: any) => {
           and changing some values to see what you like.
         </p>
 
-        <p>
-          <b>Resolution</b>
-        </p>
-
+        <h3>Resolution</h3>
         <p>
           Because there are 120 lights in the MIT Illuminations installation in
           the Welcome Center, any image that you upload into the Slit-Scan
@@ -94,14 +81,13 @@ const Page = ({ data }: any) => {
           (72dpi) so that the thumbnail image of the show is clear.
         </p>
 
-        <p>
-          <b>Color</b>
-        </p>
+        <h3>Resolution</h3>
 
         <p>
           In general, you want to pick a source image that has a handful of{' '}
-          <b>bold colors</b>. Even though RGB LEDs can produce millions of
-          colors, not all of them look equally nice as part of a light show.
+          <strong>bold colors</strong>. Even though RGB LEDs can produce
+          millions of colors, not all of them look equally nice as part of a
+          light show.
         </p>
 
         <ul>
@@ -119,9 +105,9 @@ const Page = ({ data }: any) => {
           </li>
           <li>
             For images with a rainbow of vibrant colors, you'll want to pay
-            extra attention to the <code>SCAN SPEED</code> setting. A Rainbow
-            template exists, and it's easy to accidentally create a more chaotic
-            or less intentional-looking version of that show with a busy
+            extra attention to the <code>SCAN&nbsp;SPEED</code> setting. A
+            Rainbow template exists, and it's easy to accidentally create a more
+            chaotic or less intentional-looking version of that show with a busy
             Slit-Scan photo.
           </li>
         </ul>
@@ -130,7 +116,7 @@ const Page = ({ data }: any) => {
           Some colors look harmonious together, while others clash. And
           different colors of light can also make people feel different things.
           The science and art of mixing colors falls under a study called{' '}
-          <b>color theory</b>.
+          <strong>color theory</strong>.
         </p>
 
         <p>
@@ -152,7 +138,7 @@ const Page = ({ data }: any) => {
         </p>
 
         <p>
-          <b>Shapes</b>
+          <strong>Shapes</strong>
         </p>
 
         <p>
@@ -174,7 +160,7 @@ const Page = ({ data }: any) => {
         </p>
 
         <p>
-          <b>Photographic Style</b>
+          <strong>Photographic Style</strong>
         </p>
 
         <p>
@@ -184,8 +170,8 @@ const Page = ({ data }: any) => {
           amount of sharpness with a blurred background (like you see in
           Portrait mode photos taken by iPhones). Without getting into too much
           detail, photographers call this region of sharpness the{' '}
-          <b>depth of field</b>, and it can also be added digitally as{' '}
-          <b>Gaussian blur</b>.
+          <strong>depth of field</strong>, and it can also be added digitally as{' '}
+          <strong>Gaussian blur</strong>.
         </p>
 
         <p>
@@ -197,7 +183,7 @@ const Page = ({ data }: any) => {
         </p>
 
         <p>
-          <b>Looping the Scan</b>
+          <strong>Looping the Scan</strong>
         </p>
 
         <p>

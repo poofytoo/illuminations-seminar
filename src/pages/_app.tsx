@@ -20,6 +20,19 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:image"
           content="https://learn.illuminations.mit.edu/images/illuminations-banner.png"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-33WCQX8NDP"
+        ></script>
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-33WCQX8NDP');`,
+          }}
+        ></script>
       </Head>
       <Component {...pageProps} />
     </>

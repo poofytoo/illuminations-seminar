@@ -9,6 +9,7 @@ const GuideImage = ({
   alt,
   caption,
   border,
+  borderRadius,
   href,
 }: {
   src: string | string[];
@@ -16,6 +17,7 @@ const GuideImage = ({
   alt?: string;
   caption?: string;
   border?: boolean;
+  borderRadius?: boolean;
   href?: string;
 }) => {
   if (typeof src === 'string') {
@@ -29,6 +31,7 @@ const GuideImage = ({
               [styles.large]: size === 'LARGE',
               [styles.full]: size === 'FULL',
               [styles.hideBorder]: border === false,
+              [styles.hideRadius]: borderRadius === false,
             })}
             src={src}
             alt={alt ? alt : caption ? caption : `Image`}

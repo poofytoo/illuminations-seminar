@@ -37,6 +37,10 @@
     border: none;
   }
 
+  .hideRadius {
+    border-radius: 0;
+  }
+
   &:hover {
     filter: brightness(1.1);
   }

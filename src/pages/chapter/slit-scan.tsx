@@ -1,3 +1,4 @@
+import GuideImage from '../../components/GuideImage';
 import PageNavigationButtons from '../../components/PageNavigationButtons';
 import Sidebar from '../../components/Sidebar';
 import styles from '../../styles/Guide.module.scss';
@@ -8,6 +9,9 @@ const Page = ({ data }: any) => {
       <Sidebar />
       <div className={styles.guideContent}>
         <h1>Using Slit-Scan to Make Light Shows</h1>
+        <div className={styles.author}>
+          By <a href="https://ceriley.com/">Ceri Riley</a>
+        </div>
         <div className={styles.learningGoals}>
           <h3>Goals of this Chapter</h3>
           <ul>
@@ -21,7 +25,12 @@ const Page = ({ data }: any) => {
           "Slit-Scan," which might not be as intuitive as other names like
           "Simple Gradient" or "Solid Color."
         </p>
-
+        <GuideImage
+          src="/images/guide/slit-scan-screenshot.png"
+          alt="Slit-Scan template"
+          size="FULL"
+          border={false}
+        />
         <p>
           The Slit-Scan template has you upload an image (such as a photo) as an
           input, scans down the image's pixels row-by-row, and sends those
@@ -105,12 +114,18 @@ const Page = ({ data }: any) => {
           </li>
           <li>
             For images with a rainbow of vibrant colors, you'll want to pay
-            extra attention to the <code>SCAN&nbsp;SPEED</code> setting. A
+            extra attention to the <code>Scan&nbsp;Speed</code> setting. A
             Rainbow template exists, and it's easy to accidentally create a more
             chaotic or less intentional-looking version of that show with a busy
             Slit-Scan photo.
           </li>
         </ul>
+
+        <GuideImage
+          src="/images/guide/scan-speed-screenshot.png"
+          border={false}
+          size={'FULL'}
+        />
 
         <p>
           Some colors look harmonious together, while others clash. And
@@ -202,11 +217,17 @@ const Page = ({ data }: any) => {
           <a href="https://www.gimp.org/">GIMP</a>.
         </p>
 
+        <GuideImage
+          src="/images/guide/bullet-through-apple.png"
+          border={false}
+          borderRadius={false}
+          size={'FULL'}
+          caption={`Image credit: Harold "Doc" Edgerton/MIT`}
+        />
         <p>
           The modified image (left) will give you a smooth light show, while the
           original (right) will have a visible "seam" as the slit-scan
-          transitions from the last row of pixels to the first again. Image
-          credit: Harold "Doc" Edgerton/MIT
+          transitions from the last row of pixels to the first again.
         </p>
         <PageNavigationButtons />
       </div>

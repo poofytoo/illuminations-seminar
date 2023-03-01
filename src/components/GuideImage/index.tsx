@@ -1,7 +1,7 @@
 import styles from './GuideImage.module.scss';
 import cx from 'classnames';
 
-type ImageSize = 'SMALL' | 'MEDIUM' | 'LARGE' | 'FULL';
+type ImageSize = 'TINY' | 'SMALL' | 'MEDIUM' | 'LARGE' | 'FULL';
 
 const GuideImage = ({
   src,
@@ -26,6 +26,7 @@ const GuideImage = ({
         <a href={href ? href : src} target="_blank">
           <img
             className={cx({
+              [styles.tiny]: size === 'TINY',
               [styles.small]: size === 'SMALL',
               [styles.medium]: size === 'MEDIUM' || size == undefined,
               [styles.large]: size === 'LARGE',

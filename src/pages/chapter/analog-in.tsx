@@ -86,6 +86,11 @@ const Page = ({ data }: any) => {
           you can add them to a circuit in either direction. To draw a resistor
           in a circuit diagram, we use a zig-zag symbol.
         </p>
+        <GuideImage
+          src="/images/guide/resistor-symbol.png"
+          size="TINY"
+          border={false}
+        />
         <p>
           One way to use a photoresistor in the circuit is to create a{' '}
           <strong>voltage divider</strong>, which is where you use one or
@@ -123,9 +128,13 @@ const Page = ({ data }: any) => {
         </p>
         <p>
           If you're not familiar with voltage dividers, take a moment to think
-          about why that is. You can work it out using Ohm's law:{' '}
+          about why that is. You may be able to work it out using Ohm's law:{' '}
           <span className={styles.equation}>V = IR</span>. If you need help,
-          check out [THIS TBD RESOURCE].
+          check out{' '}
+          <a href="https://learn.sparkfun.com/tutorials/voltage-dividers/all">
+            Voltage Divider Tutorial
+          </a>{' '}
+          from SparkFun.
         </p>
 
         <p>

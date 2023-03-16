@@ -8,7 +8,7 @@ This site is currently hosted deployed on Vercel, and you can see the live versi
 
 ## Setup And Development
 
-1. Clone this repo! 
+1. [Clone this repo!](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 1. Navigate to the root using Terminal on a Mac, or some sort of bash shell if youre on a PC. Run ```yarn install``` (if you don't have yarn, you may need to [install it](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable). Yarn is a package management system and makes keeping track of versions easy.)
 1. Next, you'll need to get the ```.env``` files from someone currently who has the app running. Probably Victor. Place the ```.env``` in the root of the project.
 1. To run the development server, run: ```yarn dev```
